@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/managerDash.css">
+
+</head>
+<body>
+    <header>
+        <h1> Welcome to Manager Dash Board</h1>
+    </header>
+
+
+    <main>
+        <section class="left-section">
+            <div>
+                <button class="btn" id="btn-add-product" onclick="loadHTML('addProduct.html')"><p >Add Product</p></button>
+                <button class="btn" id="btn-profile" onclick="loadHTML('profile.html')"><p >profiles</p></button>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <iframe id="managerDash-iframe" src="addProduct.html" width="100%" height="100%" style="border:none;"></iframe>
+        </section>
+    </main>
+    <script src="../js/managerDashBoard.js"></script>
+</body>
+</html>
