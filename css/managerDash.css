@@ -12,19 +12,7 @@ header {
     padding: 1em 0;
 }
 
-nav {
-    background-color: #4f728a;
-    color: white;
-    padding: 0.5em;
-    display: flex;
-    justify-content: flex-end;
-}
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
 
 main {
     display: flex;
