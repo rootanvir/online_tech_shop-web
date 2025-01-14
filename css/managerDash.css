@@ -41,10 +41,20 @@ main {
     width: 80%;
     padding: 1em;
 }
-.btn{
-    color:black;
-    font-size: larger;
-    font-weight: bold;
+.btn {
+    cursor: pointer;
+    border: 2px solid #ccc;
+    background-color: transparent;
     width: 100%;
+    height: 50px;
+    color: #053250;
+    font-size: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.btn:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+    background-color: #3498db;
+    color: white;
+    border-color: #2980b9;
+}
