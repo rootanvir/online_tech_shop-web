@@ -1,3 +1,4 @@
+<?php include'autoFill-id.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +11,10 @@
 <body>
     <div class="form-container">
         <h2>Product Input Form</h2>
-        <form action="../php/data-insert.php" method="POST" enctype="multipart/form-data">
+        <form action="data-insert.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="product_id">Product ID</label>
-                <input type="text" id="product_id" name="product_id" maxlength="15" required>
+                <input type="text" id="product_id" name="product_id" maxlength="15" value="<?php echo $newId?>" required>
             </div>
             <div class="form-group">
                 <label for="product_category">Product Category</label>
