@@ -32,8 +32,8 @@ main {
 }
 
 .left-section {
-    width:300px;
-
+    width:350px;
+    background-color: bisque;
 }
 
 .content-section {
@@ -70,13 +70,26 @@ footer {
     width: 100%;
 }
 .left-option{
-    background-color:#7ec8f7;
+    background-color:bisque;
     height: 50%;
     border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
-.btn-left-section{
-    width: 100%;
+/*-------------left button-----------------*/
+.btn-left-section {
+    cursor: pointer;
+    border: 2px solid #ccc;
+    background-color: transparent;
     height: 50px;
-    font-weight: bold;
+    width: 100%;
+    color: #053250;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.btn-left-section:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+    background-color: #3498db;
+    color: white;
+    border-color: #2980b9;
+}
