@@ -1,4 +1,4 @@
-function loadHTML(file)
+function loadHTML(file,iframe)
 {
-    document.getElementById("managerDash-iframe").src=file;
+    document.getElementById(iframe).src=file;
 }

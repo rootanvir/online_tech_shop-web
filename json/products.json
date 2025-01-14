@@ -34,5 +34,11 @@
         "product_name": "GY-906 Infrared Temperature Sensor",
         "product_price": "1299.90",
         "product_location": "..\/product_img\/p6.png"
+    },
+    {
+        "product_id": "0007",
+        "product_name": "Arduino Pro Micro",
+        "product_price": "779.70",
+        "product_location": "..\/product_img\/p7.png"
     }
 ]
