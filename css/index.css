@@ -33,7 +33,7 @@ main {
 
 .left-section {
     width: 20%;
-    background-color: #f0f0f0;
+    background-color: #32d5e0;
     padding: 1em;
     border-right: 1px solid #ccc;
 }
@@ -69,4 +69,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
+}
+.full{
+    padding: 30px;
 }
