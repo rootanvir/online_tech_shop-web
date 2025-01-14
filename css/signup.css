@@ -40,8 +40,13 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+.div-btn{
+    display: flex;
+    justify-content: center;
+}
 
 .signup-container button {
+    width:80%;
     padding: 10px;
     font-size: 16px;
     color: #fff;
@@ -50,11 +55,11 @@ body {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
-
+    transition: width 0.3s ease;
 }
 
 .signup-container button:hover {
-    background-color: #218838;
+    width: 100%;
 }
 .back-to-lo a
 {
