@@ -1,1 +1,111 @@
+<<<<<<< HEAD
 []
+=======
+[
+    {
+        "product_id": "0001",
+        "product_name": "harry",
+        "product_price": "300.00",
+        "product_location": "..\/product_img\/p1.png"
+    },
+    {
+        "product_id": "0002",
+        "product_name": "  ",
+        "product_price": "-0.01",
+        "product_location": "..\/product_img\/p2.png"
+<<<<<<< HEAD
+=======
+    },
+    {
+        "product_id": "0003",
+        "product_name": "NodeMcu Lua V3 ESP8266 WiFi with CH340G",
+        "product_price": "400.00",
+        "product_location": "..\/product_img\/p3.png"
+    },
+    {
+        "product_id": "0004",
+        "product_name": "Bluetooth Module (HC-08)",
+        "product_price": "299.99",
+        "product_location": "..\/product_img\/p4.png"
+    },
+    {
+        "product_id": "0005",
+        "product_name": "DHT11 Temperature and Humidity Sensor",
+        "product_price": "174.89",
+        "product_location": "..\/product_img\/p5.png"
+    },
+    {
+        "product_id": "0006",
+        "product_name": "GY-906 Infrared Temperature Sensor",
+        "product_price": "1299.90",
+        "product_location": "..\/product_img\/p6.png"
+    },
+    {
+        "product_id": "0007",
+        "product_name": "Arduino Pro Micro",
+        "product_price": "779.70",
+        "product_location": "..\/product_img\/p8.png"
+    },
+    {
+        "product_id": "0008",
+        "product_name": "GPS Module GY-GPSV3 NEO-8M with Ceramic Active Antenna",
+        "product_price": "1490.00",
+        "product_location": "..\/product_img\/p9.png"
+    },
+    {
+        "product_id": "0009",
+        "product_name": "Speed Detecting Sensor",
+        "product_price": "120.67",
+        "product_location": "..\/product_img\/p10.png"
+    },
+    {
+        "product_id": "0010",
+        "product_name": "RF Transmitter Receiver Pair",
+        "product_price": "121.00",
+        "product_location": "..\/product_img\/p11.png"
+    },
+    {
+        "product_id": "0011",
+        "product_name": "HC-SR04 Ultrasonic Sensor",
+        "product_price": "100.00",
+        "product_location": "..\/product_img\/p12.png"
+    },
+    {
+        "product_id": "0012",
+        "product_name": "Heat Sink Set",
+        "product_price": "54.00",
+        "product_location": "..\/product_img\/p13.png"
+    },
+    {
+        "product_id": "0013",
+        "product_name": "dfg",
+        "product_price": "11.00",
+        "product_location": "..\/product_img\/p14.png"
+    },
+    {
+        "product_id": "0014",
+        "product_name": "dfg",
+        "product_price": "0.00",
+        "product_location": "..\/product_img\/p15.png"
+    },
+    {
+        "product_id": "0015",
+        "product_name": "2",
+        "product_price": "232.00",
+        "product_location": "..\/product_img\/p16.png"
+    },
+    {
+        "product_id": "0016",
+        "product_name": "232",
+        "product_price": "323.00",
+        "product_location": "..\/product_img\/p17.png"
+    },
+    {
+        "product_id": "0017",
+        "product_name": "232",
+        "product_price": "3.00",
+        "product_location": "..\/product_img\/p18.png"
+>>>>>>> 1f7bfe2773a0719105d0105e5dcc556cee4dc029
+    }
+]
+>>>>>>> 29df7ec47b7b59dea0d3316c45ada7bb2159dfd5

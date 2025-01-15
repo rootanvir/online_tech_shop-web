@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee Form</title>
   <link rel="stylesheet" href="../css/addManager.css">
-
+  <script src="../js/validation.js" defer></script>
 </head>
 <body>
   <div class="form-container">
@@ -68,5 +68,6 @@
       </div>
     </form>
   </div>
+  <!-- <script src="../js/validation.js"></script> -->
 </body>
 </html>

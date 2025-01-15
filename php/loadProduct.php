@@ -1,17 +1,26 @@
-<?php 
-    // Include the PHP script silently to create/update JSON file
-    include 'getProducts.php';
+<?php
+header('Content-Type: application/json');
+
+// Load products from the JSON file
+$products = json_decode(file_get_contents('../json/products.json'), true);
+$productsPerPage = 12; // Number of products per page
+
+// Get the current page number (default to 1 if not provided)
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+// Calculate the starting index for slicing
+$start = ($page - 1) * $productsPerPage;
+
+// Slice the products array to get products for the current page
+$paginatedProducts = array_slice($products, $start, $productsPerPage);
+
+// Calculate the total number of pages
+$totalProducts = count($products);
+$totalPages = ceil($totalProducts / $productsPerPage);
+
+// Return the paginated products, total number of products, and total pages as JSON
+echo json_encode([
+    'products' => $paginatedProducts,
+    'totalPages' => $totalPages
+]);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Load Products</title>
-    <link rel="stylesheet" href="../css/loadProduct.css">
-</head>
-<body>
-    <div class="grid-container" id="productGrid"></div>
-    <script src="../js/loadProduct.js">    </script>
-</body>
-</html>

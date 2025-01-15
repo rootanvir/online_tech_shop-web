@@ -76,3 +76,33 @@
         grid-template-columns: 1fr; /* 1 product per row */
     }
 }
+/*----------------------------------Grid View && next button- ----------------------------------*/
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: #333;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination button:disabled {
+    background-color: #f1f1f1;
+    color: #bbb;
+    cursor: not-allowed;
+}

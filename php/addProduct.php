@@ -39,5 +39,6 @@
             <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
+    <script src="../js/validation.js"></script>
 </body>
 </html>
