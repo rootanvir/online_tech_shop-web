@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             alert("Validation failed. Please validate all section");
         } else {
-            alert("Validation successful! Product details submitted.");
+            //alert("Validation successful! Product details submitted.");
         }
     });
 });

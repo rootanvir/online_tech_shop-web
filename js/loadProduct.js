@@ -24,21 +24,20 @@ async function loadProducts(page = 1) {
                 const productCard = document.createElement('div');
                 productCard.classList.add('product-card');
                 productCard.innerHTML = `
-                            <img src="${product.product_location}" alt="${product.product_name}">
-                            <h3>${product.product_name}</h3>
-                            <p>৳ ${product.product_price}</p>
-                            <button>Add to Cart</button>
-                        `;
+                    <img src="${product.product_location}" alt="${product.product_name}">
+                    <h3>${product.product_name}</h3>
+                    <p>৳ ${product.product_price}</p>
+                    <button>Add to Cart</button>
+                `;
                 gridContainer.appendChild(productCard);
             });
         }
 
-        // Scroll to the top of the page
+        // Scroll to the top of the page (optional)
         window.scrollTo(0, 0);
 
-        // Update pagination buttons
+        // Update pagination buttons and currentPage
         checkPagination();
-
     } catch (error) {
         console.error("Error loading products:", error);
         document.getElementById('productGrid').innerHTML = '<p>Failed to load products. Please try again later.</p>';
