@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 
 // Check if any data was returned
 if ($result->num_rows > 0) {
-    echo "<table border='1' cellpadding='10' cellspacing='0' style='width:100%; text-align: center;'>";
+    echo "<table border='1' cellpadding='10' cellspacing='0' style='width:100%;'>";
     echo "<tr>
             <th>Product ID</th>
             <th>Category</th>
