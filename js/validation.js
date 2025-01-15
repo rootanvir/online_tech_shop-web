@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             alert("Validation failed. Please correct the errors and try again.");
         } else {
-            alert("Validation successful! Sign-up successful!");
+            alert("successfully signup");
         }
     });
 
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Prevent form submission if validation fails
         if (!isValid) {
             event.preventDefault();
-            alert("Validation failed. Please correct the errors and try again.");
+            alert("Validation failed. Please validate all field");
         } else {
             alert("Validation successful! Sign-Up details submitted.");
         }
