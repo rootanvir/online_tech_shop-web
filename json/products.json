@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+[]
+=======
 [
     {
         "product_id": "0001",
@@ -120,3 +123,4 @@
         "product_location": "..\/product_img\/p15.png"
     }
 ]
+>>>>>>> 29df7ec47b7b59dea0d3316c45ada7bb2159dfd5
