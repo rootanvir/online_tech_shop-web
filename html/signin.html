@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="../css/signin.css">
 
 </head>
+
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form>
+        <form action="../php/login_Control.php" method="POST">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
@@ -21,9 +23,10 @@
             </div>
         </form>
         <div class="options">
-            <a  href="forgotPassword.html">Forgot Password?</a><br><br>
-            <span>I don't have a Account  </span><a href="signup.html">Sign Up</a>
+            <a href="forgotPassword.html">Forgot Password?</a><br><br>
+            <span>I don't have a Account </span><a href="signup.html">Sign Up</a>
         </div>
     </div>
 </body>
+
 </html>
