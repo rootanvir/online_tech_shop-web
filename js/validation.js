@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const usernameRegex = /^[a-zA-Z]+$/; // Alphanumeric only
 
         if (!usernameRegex.test(username)) {
-            alert("Username must contain only letters and numbers.");
+            // alert("Username must contain only letters and numbers.");
             event.preventDefault(); // Prevent form submission
             return;
         }
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
         if (!passwordRegex.test(password)) {
-            alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
+            // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             event.preventDefault(); // Prevent form submission
             return;
         }
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const mobile = mobileInput.value.trim();
         const mobileRegex = /^[0-9]{11}$/; // 10-digit numeric only
         if (!mobileRegex.test(mobile)) {
-            alert("Mobile number must be a 11-digit numeric value.");
+            // alert("Mobile number must be a 11-digit numeric value.");
             isValid = false;
         }
 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = nameInput.value.trim();
         const nameRegex = /^[a-zA-Z ]+$/; // Letters and spaces only
         if (!nameRegex.test(name)) {
-            alert("Name must contain only letters and spaces.");
+            // alert("Name must contain only letters and spaces.");
             isValid = false;
         }
 
@@ -76,14 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = emailInput.value.trim();
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email format
         if (!emailRegex.test(email)) {
-            alert("Please enter a valid email address.");
+            // alert("Please enter a valid email address.");
             isValid = false;
         }
 
         // Validate address
         const address = addressInput.value.trim();
         if (address.length < 5) {
-            alert("Address must be at least 5 characters long.");
+            // alert("Address must be at least 5 characters long.");
             isValid = false;
         }
 
@@ -91,14 +91,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value.trim();
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (!passwordRegex.test(password)) {
-            alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
+            // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             isValid = false;
         }
 
         // Validate confirm password
         const confirmPassword = confirmPasswordInput.value.trim();
         if (password !== confirmPassword) {
-            alert("Password and Confirm Password must match.");
+            // alert("Password and Confirm Password must match.");
             isValid = false;
         }
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const employeeId = employeeIdInput.value.trim();
         const employeeIdRegex = /^[0-9]+$/; // Numbers only
         if (!employeeIdRegex.test(employeeId)) {
-            alert("Employee ID must contain only numbers.");
+            // alert("Employee ID must contain only numbers.");
             isValid = false;
         }
 
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value.trim();
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (!passwordRegex.test(password)) {
-            alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
+            // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             isValid = false;
         }
 
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const mobile = mobileInput.value.trim();
         const mobileRegex = /^[0-9]{11}$/; // 10-digit numeric only
         if (!mobileRegex.test(mobile)) {
-            alert("Mobile number must be a 10-digit numeric value.");
+            // alert("Mobile number must be a 10-digit numeric value.");
             isValid = false;
         }
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = emailInput.value.trim();
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email format
         if (!emailRegex.test(email)) {
-            alert("Please enter a valid email address.");
+            // alert("Please enter a valid email address.");
             isValid = false;
         }
 
@@ -165,21 +165,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = nameInput.value.trim();
         const nameRegex = /^[a-zA-Z ]+$/; // Letters and spaces only
         if (!nameRegex.test(name)) {
-            alert("Name must contain only letters and spaces.");
+            // alert("Name must contain only letters and spaces.");
             isValid = false;
         }
 
         // Validate address
         const address = addressInput.value.trim();
         if (address.length > 5) {
-            alert("Address must be at least 5 characters long.");
+            // alert("Address must be at least 5 characters long.");
             isValid = false;
         }
 
         // Validate salary
         const salary = salaryInput.value.trim();
         if (isNaN(salary) || salary <= 0) {
-            alert("Salary must be a positive number.");
+            // alert("Salary must be a positive number.");
             isValid = false;
         }
 
