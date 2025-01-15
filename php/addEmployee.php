@@ -10,7 +10,7 @@
 <body>
   <div class="form-container">
     <h2>Employee Registration Form</h2>
-    <form action="/submit_employee" method="POST">
+    <form action="employee-insert.php" method="POST">
       <div class="form-group">
         <label for="employee_id">Employee ID</label>
         <input type="text" id="employee_id" name="employee_id" required>
@@ -49,7 +49,11 @@
       </div>
       <div class="form-group">
         <label for="employee_role">Role</label>
-        <input type="text" id="employee_role" name="employee_role" required>
+        <select id="employee_role" name="employee_role" required>
+          <option value="">Select</option>
+          <option value="Manager">Manager</option>
+          <option value="Administation">Administation</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="employee_joining_date">Joining Date</label>
