@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/adminDash.css">
 
 </head>
+
 <body>
     <header>
         <h1> Welcome to Administration DashBoard</h1>
@@ -18,19 +20,29 @@
     <main>
         <section class="left-section">
             <div>
-                <button class="btn" id="btn-add-manager" onclick="loadHTML('../php/addEmployee.php','adminDash-iframe')">Add Employee</button>
-                <button class="btn" id="btn-add-product" onclick="loadHTML('../php/addProduct.php','adminDash-iframe')">Add Product</button>
-                <button class="btn" id="btn-employee-list" onclick="loadHTML('../php/loadEmployeeList.php','adminDash-iframe')">Employee List</button>
-                <button class="btn" id="btn-product-list" onclick="loadHTML('../php/loadProductList.php','adminDash-iframe')">Product List</button>
-                <button class="btn" id="btn-product-list" onclick="loadHTML('../php/loadCustomerList.php','adminDash-iframe')">Customer List</button>
-                <button class="btn" id="btn-profile" onclick="loadHTML('profile.html','adminDash-iframe')">profile</button>
+                <button class="btn" id="btn-add-manager"
+                    onclick="loadHTML('../php/addEmployee.php','adminDash-iframe')">Add Employee</button>
+                <button class="btn" id="btn-add-product"
+                    onclick="loadHTML('../php/addProduct.php','adminDash-iframe')">Add Product</button>
+                <button class="btn" id="btn-employee-list"
+                    onclick="loadHTML('../php/loadEmployeeList.php','adminDash-iframe')">Employee List</button>
+                <button class="btn" id="btn-product-list"
+                    onclick="loadHTML('../php/loadProductList.php','adminDash-iframe')">Product List</button>
+                <button class="btn" id="btn-product-list"
+                    onclick="loadHTML('../php/loadCustomerList.php','adminDash-iframe')">Customer List</button>
+                <button class="btn" id="btn-sells-info"
+                    onclick="loadHTML('../php/sells_info.php','adminDash-iframe')">Sells info</button>
+                <button class="btn" id="btn-profile"
+                    onclick="loadHTML('profile.html','adminDash-iframe')">profile</button>
             </div>
         </section>
 
         <section class="content-section">
-            <iframe id="adminDash-iframe" src="../php/addEmployee.php" width="100%" height="100%" style="border:none;"></iframe>
+            <iframe id="adminDash-iframe" src="../php/addEmployee.php" width="100%" height="100%"
+                style="border:none;"></iframe>
         </section>
     </main>
     <script src="../js/loadHTML.js"></script>
 </body>
+
 </html>
