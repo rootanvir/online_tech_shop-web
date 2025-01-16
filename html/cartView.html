@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,25 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart View</title>
     <link rel="stylesheet" href="../css/cartView.css">
-
 </head>
 <body>
     <div id="cart">
         <h1>Your Saved Items</h1>
-        <!-- Example of a cart item -->
-        <div class="cart-item">
-            <img src="placeholder.jpg" alt="Item Image">
-            <div class="item-details">
-                <h3>Item Name</h3>
-                <p>Lost at: Location</p>
-                <p>Date: YYYY-MM-DD</p>
-            </div>
-            <div class="cart-actions">
-                <button class="details">View Details</button>
-                <button class="remove">Remove</button>
-            </div>
+        <div id="cart-items-container"></div> <!-- Container to dynamically populate cart items -->
+        <div id="cart-summary">
+            <h3>Total Items: <span id="total-quantity">0</span></h3>
+            <h3>Total Price: $<span id="total-price">0.00</span></h3>
         </div>
-        <!-- Repeat this block for more items -->
     </div>
+    <script src="../js/viewcart.js"></script> <!-- Reference to JavaScript file -->
 </body>
 </html>
+
