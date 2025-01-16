@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const productData = await response.json();
             console.log("Products data fetched successfully:", productData);
     
-            // Find product by product_id
+            // then Find product by product_id
             const product = productData.find(item => item.product_id === productId);
     
             if (product) {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 product.product_price = parseFloat(product.product_price);
             }
     
-            // Return product details
+            // otherwise Return product details
             return product || { product_name: "Unknown Product", product_price: 0, product_location: "Unknown Location" };
         } catch (error) {
             // Catch any error in fetching and log it

@@ -1,126 +1,22 @@
 [
     {
         "product_id": "0001",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
+        "product_category": "book",
+        "product_name": "harry",
+        "product_price": "300.00",
+        "product_quantity": "2",
         "product_location": "..\/product_img\/p1.png"
     },
     {
         "product_id": "0002",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
+        "product_category": "  ",
+        "product_name": "  ",
+        "product_price": "-0.01",
+        "product_quantity": "-1",
         "product_location": "..\/product_img\/p2.png"
     },
     {
         "product_id": "0003",
-
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p3.png"
-    },
-    {
-        "product_id": "0004",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p4.png"
-    },
-    {
-        "product_id": "0005",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p5.png"
-    },
-    {
-        "product_id": "0006",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p6.png"
-    },
-    {
-        "product_id": "0007",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p7.png"
-    },
-    {
-        "product_id": "0008",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p8.png"
-    },
-    {
-        "product_id": "0009",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p9.png"
-    },
-    {
-        "product_id": "0010",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p10.png"
-    },
-    {
-        "product_id": "0011",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p11.png"
-    },
-    {
-        "product_id": "0012",
-        "product_category": " Sensor",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p12.png"
-    },
-    {
-        "product_id": "0013",
-        "product_category": "Cooler",
-        "product_name": "Heat Sink Set",
-        "product_price": "54.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p13.png"
-    },
-    {
-        "product_id": "0014",
-        "product_category": "sdfg  ",
-        "product_name": "dfg",
-        "product_price": "12.00",
-        "product_quantity": "21",
-        "product_location": "..\/product_img\/p14.png"
-    },
-    {
-        "product_id": "0015",
-        "product_category": "randon",
-        "product_name": "lily",
-        "product_price": "12.00",
-        "product_quantity": "21",
-        "product_location": "..\/product_img\/p15.png"
-    },
-    {
         "product_category": "fafa",
         "product_name": "fdfa",
         "product_price": "0.02",

@@ -73,14 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = emailInput.value.trim();
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email format
         if (!emailRegex.test(email)) {
-            // alert("Please enter a valid email address.");
             isValid = false;
         }
 
         // Validate address
         const address = addressInput.value.trim();
         if (address.length < 5) {
-            // alert("Address must be at least 5 characters long.");
             isValid = false;
         }
 
@@ -88,14 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value.trim();
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (!passwordRegex.test(password)) {
-            // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             isValid = false;
         }
 
         // Validate confirm password
         const confirmPassword = confirmPasswordInput.value.trim();
         if (password !== confirmPassword) {
-            // alert("Password and Confirm Password must match.");
             isValid = false;
         }
 
@@ -138,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value.trim();
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (!passwordRegex.test(password)) {
-            // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             isValid = false;
         }
 
@@ -146,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const mobile = mobileInput.value.trim();
         const mobileRegex = /^[0-9]{11}$/; // 10-digit numeric only
         if (!mobileRegex.test(mobile)) {
-            // alert("Mobile number must be a 10-digit numeric value.");
             isValid = false;
         }
 
@@ -154,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = emailInput.value.trim();
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email format
         if (!emailRegex.test(email)) {
-            // alert("Please enter a valid email address.");
             isValid = false;
         }
 
@@ -162,21 +155,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = nameInput.value.trim();
         const nameRegex = /^[a-zA-Z ]+$/; // Letters and spaces only
         if (!nameRegex.test(name)) {
-            // alert("Name must contain only letters and spaces.");
             isValid = false;
         }
 
         // Validate address
         const address = addressInput.value.trim();
         if (address.length > 5) {
-            // alert("Address must be at least 5 characters long.");
             isValid = false;
         }
 
         // Validate salary
         const salary = salaryInput.value.trim();
         if (isNaN(salary) || salary <= 0) {
-            // alert("Salary must be a positive number.");
             isValid = false;
         }
 
@@ -221,28 +211,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const category = categoryInput.value.trim();
         const categoryRegex = /^[a-zA-Z]{1,20}$/; // Letters and spaces, max 20 chars
         if (isEmptyOrSpaces(category) || !categoryRegex.test(category)) {
-            alert("Product category must contain only letters and spaces, and be no longer than 20 characters. It cannot be empty or spaces.");
             isValid = false;
         }
 
         // Validate product name
         const name = nameInput.value.trim();
         if (isEmptyOrSpaces(name) || name.length < 3 || name.length > 100) {
-            alert("Product name must be between 3 and 100 characters long and cannot be empty or spaces.");
             isValid = false;
         }
 
         // Validate product price
         const price = priceInput.value.trim();
         if (isEmptyOrSpaces(price) || isNaN(price) || price <= 0) {
-            alert("Product price must be a positive number and cannot be empty or spaces.");
             isValid = false;
         }
 
         // Validate product quantity
         const quantity = quantityInput.value.trim();
         if (isEmptyOrSpaces(quantity) || isNaN(quantity) || quantity <= 0 || !Number.isInteger(parseFloat(quantity))) {
-            alert("Product quantity must be a positive integer and cannot be empty or spaces.");
             isValid = false;
         }
 
