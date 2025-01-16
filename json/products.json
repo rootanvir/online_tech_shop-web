@@ -17,7 +17,6 @@
     },
     {
         "product_id": "0003",
-
         "product_category": "Cooler",
         "product_name": "Heat Sink Set",
         "product_price": "54.00",
@@ -119,20 +118,5 @@
         "product_price": "12.00",
         "product_quantity": "21",
         "product_location": "..\/product_img\/p15.png"
-    },
-    {
-        "product_category": "fafa",
-        "product_name": "fdfa",
-        "product_price": "0.02",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p16.png"
-    },
-    {
-        "product_id": "0004",
-        "product_category": "fsdf",
-        "product_name": "afasf",
-        "product_price": "0.04",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p18.png"
     }
 ]

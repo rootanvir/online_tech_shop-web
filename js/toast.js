@@ -1,15 +1,16 @@
-function toast(message, duration) {
-    // Create alert element
-    const alert = document.createElement('div');
-    alert.className = 'alert';
-    alert.textContent = message;
+function showToast(message, type = 'info', duration = 3000) {
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
 
-    // Add alert to the document
-    document.body.appendChild(alert);
+    // Get the toast container
+    const container = document.getElementById('toast-container');
+    container.appendChild(toast);
 
-    // Remove alert after the specified duration
+    // Auto-remove the toast after the specified duration
     setTimeout(() => {
-        alert.classList.add('hidden'); // Add hidden class to fade out
-        alert.addEventListener('transitionend', () => alert.remove()); // Remove from DOM after transition
+        toast.classList.add('hidden');
+        toast.addEventListener('transitionend', () => toast.remove());
     }, duration);
 }
