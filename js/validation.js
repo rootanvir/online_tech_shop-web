@@ -220,15 +220,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const productId = productIdInput.value.trim();
         const productIdRegex = /^[0-9]+$/; // Numbers only
         if (isEmptyOrSpaces(productId) || !productIdRegex.test(productId)) {
-            // alert("Product ID must contain only numbers and cannot be empty or spaces.");
+            alert("Product ID must contain only numbers and cannot be empty or spaces.");
             isValid = false;
         }
 
         // Validate product category
         const category = categoryInput.value.trim();
-        const categoryRegex = /^[a-zA-Z ]{1,20}$/; // Letters and spaces, max 20 chars
+        const categoryRegex = /^[a-zA-Z]{1,20}$/; // Letters and spaces, max 20 chars
         if (isEmptyOrSpaces(category) || !categoryRegex.test(category)) {
-            // alert("Product category must contain only letters and spaces, and be no longer than 20 characters. It cannot be empty or spaces.");
+            alert("Product category must contain only letters and spaces, and be no longer than 20 characters. It cannot be empty or spaces.");
             isValid = false;
         }
 
@@ -242,14 +242,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Validate product price
         const price = priceInput.value.trim();
         if (isEmptyOrSpaces(price) || isNaN(price) || price <= 0) {
-            // alert("Product price must be a positive number and cannot be empty or spaces.");
+            alert("Product price must be a positive number and cannot be empty or spaces.");
             isValid = false;
         }
 
         // Validate product quantity
         const quantity = quantityInput.value.trim();
         if (isEmptyOrSpaces(quantity) || isNaN(quantity) || quantity <= 0 || !Number.isInteger(parseFloat(quantity))) {
-            // alert("Product quantity must be a positive integer and cannot be empty or spaces.");
+            alert("Product quantity must be a positive integer and cannot be empty or spaces.");
             isValid = false;
         }
 

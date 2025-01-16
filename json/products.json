@@ -14,5 +14,21 @@
         "product_price": "-0.01",
         "product_quantity": "-1",
         "product_location": "..\/product_img\/p2.png"
+    },
+    {
+        "product_id": "0003",
+        "product_category": "fafa",
+        "product_name": "fdfa",
+        "product_price": "0.02",
+        "product_quantity": "1",
+        "product_location": "..\/product_img\/p16.png"
+    },
+    {
+        "product_id": "0004",
+        "product_category": "fsdf",
+        "product_name": "afasf",
+        "product_price": "0.04",
+        "product_quantity": "3",
+        "product_location": "..\/product_img\/p18.png"
     }
 ]
