@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!usernameRegex.test(username)) {
             // alert("Username must contain only letters and numbers.");
             event.preventDefault(); // Prevent form submission
-            return;
+            isValid=false;
+            // return;
         }
 
         // Validate password
@@ -27,15 +28,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!passwordRegex.test(password)) {
             // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             event.preventDefault(); // Prevent form submission
-            return;
+            isValid=false;
+            // return;
         }
 
         // If any validation fails, prevent form submission
         if (!isValid) {
+            alert("Please give valid username and password");
+              
+            // alert("Validation failed. Please correct the errors and try again.");
             event.preventDefault();
-            alert("Validation failed. Please correct the errors and try again.");
         } else {
-            alert("successfully signup");
+            alert("successfully signin");
         }
     });
 
@@ -105,9 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Prevent form submission if validation fails
         if (!isValid) {
             event.preventDefault();
-            alert("Validation failed. Please validate all field");
+            alert("Please give all valid information");
         } else {
-            alert("Validation successful! Sign-Up details submitted.");
+            alert("successfully signup");
         }
     });
 });
@@ -186,9 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // If any validation fails, prevent form submission
         if (!isValid) {
             event.preventDefault();
-            alert("Validation failed. Please correct the errors and try again.");
+            alert("please fill up all valid information");
         } else {
-            alert("Validation successful! Employee details submitted.");
+            alert("successfully added");
         }
     });
 });
@@ -252,9 +256,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // If any validation fails, prevent form submission
         if (!isValid) {
             event.preventDefault();
-            alert("Validation failed. Please validate all section");
+            alert("please fill up valid information");
         } else {
-            //alert("Validation successful! Product details submitted.");
+            alert("successfully added product");
         }
     });
 });
