@@ -57,6 +57,7 @@ async function loadProducts(page = 1) {
 function attachAddToCartHandlers() {
     const buttons = document.querySelectorAll('.add-to-cart-button');
 
+
     buttons.forEach(button => {
         button.addEventListener('click', function () {
             const productId = button.getAttribute('data-product-id'); // Get product ID

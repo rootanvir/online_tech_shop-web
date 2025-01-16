@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const usernameRegex = /^[a-zA-Z]+$/; // Alphanumeric only
 
         if (!usernameRegex.test(username)) {
-            // alert("Username must contain only letters and numbers.");
             event.preventDefault(); // Prevent form submission
             isValid=false;
             // return;
@@ -26,17 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
         if (!passwordRegex.test(password)) {
-            // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             event.preventDefault(); // Prevent form submission
             isValid=false;
-            // return;
         }
 
         // If any validation fails, prevent form submission
         if (!isValid) {
             alert("please valid username and password");
-              
-            // alert("Validation failed. Please correct the errors and try again.");
             event.preventDefault();
         } else {
             alert("successfully signin");
@@ -64,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const mobile = mobileInput.value.trim();
         const mobileRegex = /^[0-9]{11}$/; // 10-digit numeric only
         if (!mobileRegex.test(mobile)) {
-            // alert("Mobile number must be a 11-digit numeric value.");
             isValid = false;
         }
 
@@ -72,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = nameInput.value.trim();
         const nameRegex = /^[a-zA-Z ]+$/; // Letters and spaces only
         if (!nameRegex.test(name)) {
-            // alert("Name must contain only letters and spaces.");
             isValid = false;
         }
 
