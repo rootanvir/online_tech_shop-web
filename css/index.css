@@ -8,7 +8,6 @@ body {
 }
 
 header, footer {
-    background-color: #358f80;
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -91,4 +90,125 @@ footer {
     background-color: #3498db;
     color: white;
     border-color: #2980b9;
+}
+.top{
+    display: flex;
+    height: 50px;
+    background-color: #ccc;
+}
+
+.top-left{
+    flex-grow: 1;  
+}
+.top-middle{
+    flex-grow: 2;         
+        }
+.top-right{
+    flex-grow: 1;
+    
+}
+
+
+/*-----------------------------------Search Box-----------------------------*/
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+.search-button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #f0f0f0;
+}
+
+.search-icon {
+    width: 23px;
+    height: 23px;
+    object-fit: cover;
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        width: 100%;
+    }
+}
+.btn-left-section {
+    cursor: pointer;
+    border: 3px solid #ccc;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    color: #053250;
+    font-size: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-left-section:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+    background-color: #3498db;
+    color: white;
+    border-color: #2980b9;
+}
+.top{
+    display: flex;
+    height: 50px;
+
+}
+
+.top-left{
+    flex-grow: 1;  
+}
+.top-middle{
+    flex-grow: 2;         
+        }
+.top-right{
+    flex-grow: 1;
+    
+}
+
+
+/*CART*/
+
+
+.cart-icon {
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.2);
 }

@@ -24,21 +24,28 @@ async function loadProducts(page = 1) {
                 const productCard = document.createElement('div');
                 productCard.classList.add('product-card');
                 productCard.innerHTML = `
-                            <img src="${product.product_location}" alt="${product.product_name}">
-                            <h3>${product.product_name}</h3>
-                            <p>৳ ${product.product_price}</p>
-                            <button>Add to Cart</button>
-                        `;
+                    <img src="${product.product_location}" alt="${product.product_name}">
+                    <h3>${product.product_name}</h3>
+                    <p>৳ ${product.product_price}</p>
+                    <button 
+                        class="add-to-cart-button" 
+                        data-product-id="${product.product_id}" 
+                        data-product-name="${product.product_name}">
+                        Add to Cart
+                    </button>
+                `;
                 gridContainer.appendChild(productCard);
             });
+
+            // Attach add-to-cart functionality to new buttons
+            attachAddToCartHandlers();
         }
 
-        // Scroll to the top of the page
+        // Scroll to the top of the page (optional)
         window.scrollTo(0, 0);
 
-        // Update pagination buttons
+        // Update pagination buttons and currentPage
         checkPagination();
-
     } catch (error) {
         console.error("Error loading products:", error);
         document.getElementById('productGrid').innerHTML = '<p>Failed to load products. Please try again later.</p>';
@@ -46,12 +53,27 @@ async function loadProducts(page = 1) {
     }
 }
 
+// Function to attach add-to-cart event handlers to buttons
+function attachAddToCartHandlers() {
+    const buttons = document.querySelectorAll('.add-to-cart-button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const productId = button.getAttribute('data-product-id'); // Get product ID
+            const productName = button.getAttribute('data-product-name'); // Get product name
+            const quantity = 1; // Default quantity is 1
+
+            // Call functions from add2cart.js
+            addToCartAlert(productName); // Show alert
+            saveToCookie(productId, quantity); // Save product to cookie
+            sendToServer(productId, quantity); // Send product info to server
+        });
+    });
+}
+
 // Function to check pagination button states (Previous and Next)
 function checkPagination() {
-    // Disable Previous button if on the first page
     document.getElementById('prevPage').disabled = currentPage === 1;
-
-    // Disable Next button if on the last page
     document.getElementById('nextPage').disabled = currentPage === totalPages;
 }
 
