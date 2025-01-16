@@ -1,7 +1,7 @@
 // Function to show an alert when the "Add to Cart" button is clicked
 function addToCartAlert(productName) {
     //alert(`${productName} has been added to the cart!`);
-    showToast(`${productName} added successfully to your cart`, 'info', 2000);
+    showToast(`${productName} added successfully to your cart`, 'success', 2000);
     console.log("Added to cart");
 }
 

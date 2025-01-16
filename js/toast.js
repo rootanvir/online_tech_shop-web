@@ -1,5 +1,6 @@
 function showToast(message, type = 'info', duration = 3000) {
     // Create toast element
+    //info = info || error || success
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
     toast.textContent = message;
