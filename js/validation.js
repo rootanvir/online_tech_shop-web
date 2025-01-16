@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // If any validation fails, prevent form submission
         if (!isValid) {
-            alert("Please give valid username and password");
+            alert("Wrong information");
               
             // alert("Validation failed. Please correct the errors and try again.");
             event.preventDefault();
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value.trim();
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (!passwordRegex.test(password)) {
-            // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
+            //alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             isValid = false;
         }
 
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Prevent form submission if validation fails
         if (!isValid) {
             event.preventDefault();
-            alert("Please give all valid information");
+            alert("Invalid information ! Try Again.");
         } else {
             alert("successfully signup");
         }
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value.trim();
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (!passwordRegex.test(password)) {
-            // alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
+            alert("Password must be at least 6 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.");
             isValid = false;
         }
 
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // If any validation fails, prevent form submission
         if (!isValid) {
             event.preventDefault();
-            alert("please fill up all valid information");
+            alert("Invalid information! Try Again ");
         } else {
             alert("successfully added");
         }
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // If any validation fails, prevent form submission
         if (!isValid) {
             event.preventDefault();
-            alert("please fill up valid information");
+            alert("Invalid Information");
         } else {
             alert("successfully added product");
         }
