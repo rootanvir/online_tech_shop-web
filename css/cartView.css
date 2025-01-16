@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Top-Right Cart Button */
+.top-right {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.cart-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px;
+}
+.cart-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* Cart Container */
+#cart {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Header */
+#cart h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Cart Item Styles */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+/* Item Details */
+.item-details {
+    flex: 1;
+}
+.item-details h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #444;
+}
+.item-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Cart Actions */
+.cart-actions {
+    text-align: right;
+}
+.cart-actions button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.cart-actions .remove {
+    background-color: #e74c3c;
+    color: white;
+}
+.cart-actions .details {
+    background-color: #3498db;
+    color: white;
+}
+
+
