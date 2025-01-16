@@ -30,5 +30,13 @@
         "product_price": "0.04",
         "product_quantity": "3",
         "product_location": "..\/product_img\/p18.png"
+    },
+    {
+        "product_id": "0005",
+        "product_category": "fsdf",
+        "product_name": "afasf",
+        "product_price": "100.00",
+        "product_quantity": "3",
+        "product_location": "..\/product_img\/p19.png"
     }
 ]

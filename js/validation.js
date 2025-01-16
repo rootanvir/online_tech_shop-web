@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // If any validation fails, prevent form submission
         if (!isValid) {
-            alert("Please give valid username and password");
+            alert("please valid username and password");
               
             // alert("Validation failed. Please correct the errors and try again.");
             event.preventDefault();
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Prevent form submission if validation fails
         if (!isValid) {
             event.preventDefault();
-            alert("Please give all valid information");
+            alert("Invalid information try again");
         } else {
             alert("successfully signup");
         }
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // If any validation fails, prevent form submission
         if (!isValid) {
             event.preventDefault();
-            alert("please fill up all valid information");
+            alert("Invalid information try again");
         } else {
             alert("successfully added");
         }
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // If any validation fails, prevent form submission
         if (!isValid) {
             event.preventDefault();
-            alert("please fill up valid information");
+            alert("Invalid information try again");
         } else {
             alert("successfully added product");
         }
