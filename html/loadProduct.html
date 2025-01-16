@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,23 @@
     <link rel="stylesheet" href="../css/loadProduct.css"> <!-- Ensure the path is correct -->
     <link rel="stylesheet" href="../css/toast.css"> <!-- Ensure the path is correct -->
 </head>
-<body>
-    <div class="grid-container" id="productGrid"></div>
-    <!-- Add this inside your HTML body -->
-    <div id="toast-container"></div>
 
+<body>
+
+    <!--
+    <div id="toast-container" style="position: fixed;"></div>
+    -->
+    
+    <div class="grid-container" id="productGrid"></div>
 
     <div class="pagination">
         <button id="prevPage" disabled>Previous</button>
         <button id="nextPage" disabled>Next</button>
     </div>
-    
+
     <script src="../js/loadProduct.js"></script>
     <script src="../js/add2cart.js"></script>
-    <script src="../js/toast.js"></script>
+    <script src="../js/toast.js"></script> <!-- Ensure this script is loaded last -->
 </body>
+
 </html>
