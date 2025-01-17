@@ -52,13 +52,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="${productDetails.product_location}" alt="Product Image" width="50">
                     ${productDetails.product_name}
                 </td>
+<<<<<<< HEAD
                 <td>$ ${productPrice.toFixed(2)}</td>
+=======
+                <td>৳${productPrice.toFixed(2)}</td>
+>>>>>>> 7cba97d3038b25f25263875f4a20557a25108690
                 <td>
                     <button class="decrement" data-product-id="${productId}">-</button>
                     <span>${quantity}</span>
                     <button class="increment" data-product-id="${productId}">+</button>
                 </td>
-                <td>$${itemTotal.toFixed(2)}</td>
+                <td>৳${itemTotal.toFixed(2)}</td>
                 <td>
                     <button class="remove" data-product-id="${productId}">Remove</button>
                 </td>
