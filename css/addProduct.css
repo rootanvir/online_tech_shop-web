@@ -1,126 +1,113 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body */
+/* Body Styling */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url("https://www.w3schools.com/w3images/wood.jpg"); /* Background image */
-  background-size: cover;
-  background-position: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+  margin: 0;
 }
 
 /* Form Container */
 .form-container {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* White with slight transparency */
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  width: 100%;
   max-width: 600px;
-  backdrop-filter: blur(10px); /* Soft blur effect */
-  border: 1px solid #ddd;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Title */
-h2 {
+/* Form Heading */
+.form-container h2 {
   text-align: center;
-  margin-bottom: 25px;
-  font-size: 28px;
+  margin-bottom: 20px;
   color: #333;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* Form Group */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-/* Label */
-label {
+.form-group label {
   display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   font-size: 14px;
   color: #333;
-  margin-bottom: 8px;
-  font-weight: 500;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
 }
 
-/* Input Fields */
-input[type="text"],
-input[type="number"],
-input[type="file"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
-  background-color: #f9f9f9;
-  transition: 0.3s ease;
-}
-
-/* Input Fields on Focus */
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="file"]:focus {
+.form-group input:focus,
+.form-group select:focus {
   border-color: #4caf50;
-  background-color: #fff;
   outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* File Input Styling */
+.form-group input[type="file"] {
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.form-group input[type="file"]::-webkit-file-upload-button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #45a049;
 }
 
 /* Submit Button */
-.submit-btn {
-  width: 100%;
-  padding: 15px;
+.form-group input[type="submit"] {
+  background: #4caf50;
+  color: white;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(45deg, #4caf50, #81c784);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-.submit-btn:hover {
-  background: linear-gradient(45deg, #388e3c, #66bb6a);
+.form-group input[type="submit"]:hover {
+  background: #45a049;
 }
 
-/* Image Preview */
-#product_image {
-  padding: 10px;
-}
-
-/* Hover Effect for Form Group */
-.form-group:hover {
-  background-color: #f1f1f1;
-  border-radius: 8px;
-}
-
-/* Responsive Design */
+/* Responsiveness */
 @media (max-width: 768px) {
   .form-container {
     padding: 30px;
-    width: 90%;
   }
 
-  h2 {
-    font-size: 24px;
+  .form-container h2 {
+    font-size: 20px;
   }
 
-  .submit-btn {
+  .form-group input,
+  .form-group select {
     font-size: 14px;
   }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="../css/addManager.css">
   <script src="../js/validation.js" defer></script>
 </head>
+
 <body>
   <div class="form-container">
     <h2>Employee Registration Form</h2>
@@ -52,7 +54,7 @@
         <select id="employee_role" name="employee_role" required>
           <option value="">Select</option>
           <option value="Manager">Manager</option>
-          <option value="Administation">Administation</option>
+          <option value="Administation">Admin</option>
         </select>
       </div>
       <div class="form-group">
@@ -70,4 +72,5 @@
   </div>
   <!-- <script src="../js/validation.js"></script> -->
 </body>
+
 </html>
