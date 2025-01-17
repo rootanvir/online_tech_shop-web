@@ -3,27 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart View</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="../css/cartView.css">
-
 </head>
 <body>
-    <div id="cart">
-        <h1>Your Saved Items</h1>
-        <!-- Example of a cart item -->
-        <div class="cart-item">
-            <img src="placeholder.jpg" alt="Item Image">
-            <div class="item-details">
-                <h3>Item Name</h3>
-                <p>Lost at: Location</p>
-                <p>Date: YYYY-MM-DD</p>
-            </div>
-            <div class="cart-actions">
-                <button class="details">View Details</button>
-                <button class="remove">Remove</button>
-            </div>
+    <header class="tp" style="position: sticky;">
+        <div class="tp-left"> </div>
+        <div class="tp-middle"> </div>
+        <div class="tp-right"><a id="btn-continue-shopping" href="../index.html">Continue shopping</a>
         </div>
-        <!-- Repeat this block for more items -->
+    </header>
+    <div id="cart-container">
+        <!-- Left side: Shopping cart -->
+        <div id="shopping-cart">
+            <h1>My Shopping Cart</h1>
+            <table id="cart-items-container">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Items will be dynamically rendered here -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Right side: Order summary -->
+        <div id="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Sub Total</span>
+                <span>৳<span id="sub-total">0</span></span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping Cost</span>
+                <span>৳<span id="shipping-cost">0</span></span>
+            </div>
+            <hr />
+            <div class="summary-row total">
+                <span>Total Amount</span>
+                <span>৳<span id="total-amount">0</span></span>
+            </div>
+            <div class="coupon">
+                <input type="text" id="coupon-code" placeholder="Enter your coupon code" />
+                <button id="apply-coupon">Apply</button>
+            </div>
+            <p class="sign-in">* Please <a href="signin.html">Sign In</a> to apply coupon</p>
+            <button id="proceed-to-checkout">Proceed to Checkout</button>
+        </div>
+        
+        <!-- <div id="order-summary">
+            <h2>Order Summary</h2>
+            <p>Sub Total: $<span id="sub-total">0.00</span></p>
+            <p>Shipping Cost: $<span id="shipping-cost">0.00</span></p>
+            <p>Total Amount: $<span id="total-amount">0.00</span></p>
+            <button id="proceed-to-checkout">Proceed to Checkout</button>
+        </div> -->
     </div>
+    <script src="../js/viewcart.js"></script>
 </body>
 </html>

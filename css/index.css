@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,12 +8,16 @@ body {
     min-height: 100vh;
 }
 
-header, footer {
+/* Header and Footer */
+header,
+footer {
+    background-color: #036666;
     color: white;
     text-align: center;
     padding: 1em 0;
 }
 
+/* Navigation Bar */
 nav {
     background-color: #036666;
     color: white;
@@ -25,127 +30,83 @@ nav a {
     text-decoration: none;
 }
 
+/* Main Content Area */
 main {
     display: flex;
     flex: 1;
+    flex-wrap: wrap;
 }
 
+/* Left Sidebar */
 .left-section {
-    width:350px;
-
+    background-color: #f0f0f0;
+    width: 350px;
+    min-width: 250px;
+    border-right: 1px solid #ccc;
 }
 
+/* Content Section */
 .content-section {
-    width: 100%;
+    flex: 1;
     padding: 1em;
 }
 
-article {
-    margin-bottom: 1em;
-    padding: 1em;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-}
-
-aside {
-    background-color: #f4f4f4;
-    padding: 1em;
-    border: 1px solid #ddd;
-    margin: 1em 0;
-}
-
-details {
-    margin: 1em 0;
-    padding: 1em;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-.left-option{
-    background-color:#f0f0f0;
-    height: 50%;
-    border-right: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
-}
-/*-------------left button-----------------*/
+/* Left Section Buttons */
 .btn-left-section {
     cursor: pointer;
-    border: 3px solid #ccc;
+    border: 1px solid #ccc;
     background-color: transparent;
     width: 100%;
     height: 50px;
     color: #053250;
-    font-size: 25px;
+    font-size: 18px;
+    margin-bottom: 10px;
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-left-section:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     background-color: #3498db;
     color: white;
     border-color: #2980b9;
 }
-.top{
-    display: flex;
-    height: 50px;
-    background-color: #ccc;
-}
 
-.top-left{
-    flex-grow: 1;  
-}
-.top-middle{
-    flex-grow: 2;         
-        }
-.top-right{
-    flex-grow: 1;
-    
-}
-
-
-/*-----------------------------------Search Box-----------------------------*/
+/* Search Container */
 .search-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
-    width: 400px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 20px 0;
 }
 
 .search-input {
-    width: 100%;
+    width: 350px;
     padding: 10px 15px;
     border: 2px solid #ccc;
     border-radius: 30px;
     font-size: 16px;
-    transition: all 0.3s ease;
+    transition: width 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     outline: none;
 }
 
 .search-input:focus {
+    width: 400px;
     border-color: #2980b9;
     box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
 }
 
 .search-button {
     background-color: transparent;
-    border: 1px solid white;
-    border-radius: 50%;
-    padding: 10px;
-    margin-left: 10px;
+    border: none;
+    margin-left: -45px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
     background-color: #f0f0f0;
+    border-radius: 50%;
 }
 
 .search-icon {
@@ -158,51 +119,38 @@ footer {
     color: #888;
 }
 
-@media (max-width: 768px) {
-    .search-container {
-        width: 100%;
-    }
-}
-.btn-left-section {
-    cursor: pointer;
-    border: 3px solid #ccc;
-    background-color: transparent;
-    width: 100%;
-    height: 50px;
-    color: #053250;
-    font-size: 25px;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-left-section:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
-    background-color: #3498db;
-    color: white;
-    border-color: #2980b9;
-}
-.top{
+/* Top Section */
+.top {
     display: flex;
-    height: 50px;
-
+    background-color: #ccc;
+    height: 100px;
+    width: 100%;
 }
 
-.top-left{
-    flex-grow: 1;  
-}
-.top-middle{
-    flex-grow: 2;         
-        }
-.top-right{
-    flex-grow: 1;
-    
+.top-left,
+.top-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.top-middle {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/*CART*/
-
+/* Cart Section */
+.cart-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
 
 .cart-icon {
-    margin-top: 10px;
     width: 30px;
     height: 30px;
     object-fit: cover;
@@ -211,4 +159,69 @@ footer {
 
 .cart-icon:hover {
     transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .left-section {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .content-section {
+        width: 100%;
+    }
+
+    .top {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .top-left,
+    .top-middle,
+    .top-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .search-input {
+        width: 80%;
+    }
+
+    .search-input:focus {
+        width: 90%;
+    }
+}
+
+/*------------------------profile----------------------------------*/
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+/* Profile Icon Button */
+.profile-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+    filter: brightness(1.2); /* Brightens the icon */
 }
