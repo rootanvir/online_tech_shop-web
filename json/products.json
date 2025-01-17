@@ -118,13 +118,5 @@
         "product_price": "3.00",
         "product_quantity": "3",
         "product_location": "..\/product_img\/p31.png"
-    },
-    {
-        "product_id": "0020",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p32.png"
     }
 ]

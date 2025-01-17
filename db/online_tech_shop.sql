@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2025 at 10:12 AM
+-- Generation Time: Jan 17, 2025 at 11:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -93,8 +93,24 @@ CREATE TABLE `sells` (
   `products` varchar(70) NOT NULL,
   `quantity` int(10) NOT NULL,
   `price` float NOT NULL,
-  `time` datetime(6) NOT NULL
+  `time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sells`
+--
+
+INSERT INTO `sells` (`sell_id`, `customer_name`, `customer_email`, `products`, `quantity`, `price`, `time`) VALUES
+(1, 'John Doe', 'john.doe@example.com', 'Laptop', 2, 1200.5, '2025-01-10 10:30:00'),
+(2, 'Jane Smith', 'jane.smith@example.com', 'Smartphone', 1, 899.99, '2025-01-10 12:00:00'),
+(3, 'Alice Johnson', 'alice.johnson@example.com', 'Tablet', 3, 499.99, '2025-01-11 14:45:00'),
+(4, 'Bob Brown', 'bob.brown@example.com', 'Laptop, Mouse', 1, 1350.75, '2025-01-11 16:20:00'),
+(5, 'Eve Davis', 'eve.davis@example.com', 'Headphones', 5, 199.95, '2025-01-12 09:15:00'),
+(6, 'Tom Harris', 'tom.harris@example.com', 'Monitor', 2, 299.99, '2025-01-12 11:00:00'),
+(7, 'Sophia Green', 'sophia.green@example.com', 'Keyboard', 4, 89.99, '2025-01-13 13:30:00'),
+(8, 'Liam Scott', 'liam.scott@example.com', 'Smartphone', 2, 899.99, '2025-01-13 15:45:00'),
+(9, 'Mia White', 'mia.white@example.com', 'Laptop', 1, 1200.5, '2025-01-14 10:00:00'),
+(10, 'Noah Taylor', 'noah.taylor@example.com', 'Tablet', 2, 499.99, '2025-01-14 11:30:00');
 
 --
 -- Indexes for dumped tables
@@ -132,7 +148,7 @@ ALTER TABLE `sells`
 -- AUTO_INCREMENT for table `sells`
 --
 ALTER TABLE `sells`
-  MODIFY `sell_id` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `sell_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

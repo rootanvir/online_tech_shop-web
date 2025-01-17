@@ -34,7 +34,6 @@ mysqli_close($conn);
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 30px;
         }
 
         table,
@@ -53,6 +52,12 @@ mysqli_close($conn);
             background-color: #f2f2f2;
         }
 
+        .table-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+        }
+
         canvas {
             margin: 20px 0;
         }
@@ -69,41 +74,43 @@ mysqli_close($conn);
 <body>
     <h1>Sales Information</h1>
 
-    <!-- Sales Table -->
-    <table>
-        <thead>
-            <tr>
-                <th>Sell ID</th>
-                <th>Customer Name</th>
-                <th>Customer Email</th>
-                <th>Products</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            // Check if any rows were returned
-            if (mysqli_num_rows($result_table) > 0) {
-                // Fetch each row and display it
-                while ($row = mysqli_fetch_assoc($result_table)) {
-                    echo "<tr>
-                        <td>{$row['sell_id']}</td>
-                        <td>{$row['customer_name']}</td>
-                        <td>{$row['customer_email']}</td>
-                        <td>{$row['products']}</td>
-                        <td>{$row['quantity']}</td>
-                        <td>{$row['price']}</td>
-                        <td>{$row['time']}</td>
-                    </tr>";
+    <!-- Scrollable Sales Table -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sell ID</th>
+                    <th>Customer Name</th>
+                    <th>Customer Email</th>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Check if any rows were returned
+                if (mysqli_num_rows($result_table) > 0) {
+                    // Fetch each row and display it
+                    while ($row = mysqli_fetch_assoc($result_table)) {
+                        echo "<tr>
+                            <td>{$row['sell_id']}</td>
+                            <td>{$row['customer_name']}</td>
+                            <td>{$row['customer_email']}</td>
+                            <td>{$row['products']}</td>
+                            <td>{$row['quantity']}</td>
+                            <td>{$row['price']}</td>
+                            <td>{$row['time']}</td>
+                        </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='7'>No sales data found</td></tr>";
                 }
-            } else {
-                echo "<tr><td colspan='7'>No sales data found</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
+                ?>
+            </tbody>
+        </table>
+    </div>
 
     <!-- Sales Statistics Chart -->
     <h2>Sales Statistics</h2>
