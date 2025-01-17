@@ -158,6 +158,7 @@ main {
 .top{
     display: flex;
     height: 50px;
+    width: 100%;
 
 }
 
@@ -165,16 +166,14 @@ main {
     flex-grow: 1;  
 }
 .top-middle{
-    flex-grow: 2;         
+    flex-grow: 2; 
         }
 .top-right{
     flex-grow: 1;
     
 }
 
-
 /*CART*/
-
 
 .cart-icon {
     margin-top: 10px;
