@@ -111,3 +111,18 @@ body {
     font-size: 14px;
   }
 }
+/* Style for the submit button */
+.submit-btn {
+  width: 100%;
+  background-color: #007BFF; /* Blue background */
+  color: white; /* White text */
+  font-size: 16px; /* Font size */
+  padding: 12px 24px; /* Padding around the text */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Hover effect */

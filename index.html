@@ -39,7 +39,7 @@
         <a href="html/managerDash.html">Manager</a>
         <a href="html/signin.html">Sign In</a>
     </nav>
-
+    <div id="search_results"></div>
     <main class="full">
         <section class="left-section">
             <div class="left-option">
@@ -54,7 +54,9 @@
                 
         </section>
     </main>
-    <div id="toast-container"> </div>   
+    <div id="toast-container"> </div> 
+    <script src="js/searchProduct.js"></script>
+
     <script>
         function loadAllProducts() {
             const iframe = document.getElementById('productLoader');
