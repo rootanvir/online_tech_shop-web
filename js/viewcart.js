@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Event listeners for cart actions
-    cartItemsContainer.addEventListener("click", (event) => {
+    cartItemsContainer.addEventListener("click", async (event) => {
         const target = event.target;
         const productId = target.getAttribute("data-product-id");
         let cart = getCartFromCookie();
@@ -81,7 +81,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if (target.classList.contains("remove")) {
             cart = cart.filter(item => item.productId !== productId);
         } else if (target.classList.contains("increment")) {
-            cart = cart.map(item => item.productId === productId ? { ...item, quantity: item.quantity + 1 } : item);
+            const productDetails = await fetchProductDetails(productId);
+            if (!productDetails) {
+                alert("Product details not found.");
+                return;
+            }
+
+            // Check stock availability
+            const cartItem = cart.find(item => item.productId === productId);
+            if (cartItem.quantity <= productDetails.product_quantity) {
+                cart = cart.map(item => item.productId === productId ? { ...item, quantity: item.quantity + 1 } : item);
+            } else {
+                alert("Cannot add more items. Stock limit reached.");
+                return;
+            }
         } else if (target.classList.contains("decrement")) {
             cart = cart.map(item => item.productId === productId && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item);
         }
