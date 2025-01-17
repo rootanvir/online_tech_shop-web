@@ -114,7 +114,7 @@ mysqli_close($conn);
 
     <!-- Sales Statistics Chart -->
     <h1>Sales Statistics</h1>
-    <canvas id="salesChart" width="800" height="400"></canvas>
+    <canvas id="salesChart" width="800" height="300"></canvas>
 </body>
 
 </html>
