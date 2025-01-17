@@ -53,7 +53,7 @@ mysqli_close($conn);
         }
 
         .table-container {
-            max-height: 300px;
+            max-height: 250px;
             overflow-y: auto;
             border: 1px solid #ccc;
         }
@@ -113,8 +113,8 @@ mysqli_close($conn);
     </div>
 
     <!-- Sales Statistics Chart -->
-    <h2>Sales Statistics</h2>
-    <canvas id="salesChart" width="800" height="400"></canvas>
+    <h1>Sales Statistics</h1>
+    <canvas id="salesChart" width="800" height="300"></canvas>
 </body>
 
 </html>

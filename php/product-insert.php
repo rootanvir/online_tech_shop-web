@@ -11,14 +11,15 @@ if (!is_dir($targetDir)) {
 }
 
 // Function to get the next sequential number for file naming
-function getNextFileNumber($dir, $prefix) {
+function getNextFileNumber($dir, $prefix)
+{
     $files = glob($dir . $prefix . '*'); // Get all files starting with the prefix
     if (empty($files)) {
         return 1; // Start from 1 if no files exist
     }
 
     // Extract numbers from existing file names
-    $numbers = array_map(function($file) use ($prefix) {
+    $numbers = array_map(function ($file) use ($prefix) {
         $basename = basename($file);
         $number = intval(str_replace([$prefix, '.'], '', $basename));
         return $number;
@@ -70,4 +71,3 @@ if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] == UPLO
 }
 
 mysqli_close($conn); // Close the database connection
-?>

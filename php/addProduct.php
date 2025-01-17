@@ -1,6 +1,7 @@
-<?php include'autoFill-id.php';?>
+<?php include 'autoFill-id.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
     <link rel="stylesheet" href="../css/addProduct.css">
 
 </head>
+
 <body>
     <div class="form-container">
         <h2>Product Input Form</h2>
         <form action="product-insert.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="product_id">Product ID</label>
-                <input type="text" id="product_id" name="product_id" maxlength="15" value="<?php echo $newId?>" required>
+                <input type="text" id="product_id" name="product_id" maxlength="15" value="<?php echo $newId ?>" required>
             </div>
             <div class="form-group">
                 <label for="product_category">Product Category</label>
@@ -41,4 +43,5 @@
     </div>
     <script src="../js/validation.js"></script>
 </body>
+
 </html>
