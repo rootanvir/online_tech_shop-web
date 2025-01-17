@@ -1,15 +1,18 @@
-function toast(message, duration) {
-    // Create alert element
-    const alert = document.createElement('div');
-    alert.className = 'alert';
-    alert.textContent = message;
+function showToast(message, type = 'info', duration = 3000) {
+    const toastContainer = window.parent.document.getElementById('toast-container'); // Use the parent container
+    if (!toastContainer) {
+        console.error("Toast container not found in parent page.");
+        return;
+    }
 
-    // Add alert to the document
-    document.body.appendChild(alert);
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
 
-    // Remove alert after the specified duration
+    toastContainer.appendChild(toast);
+
     setTimeout(() => {
-        alert.classList.add('hidden'); // Add hidden class to fade out
-        alert.addEventListener('transitionend', () => alert.remove()); // Remove from DOM after transition
+        toast.classList.add('hidden');
+        toast.addEventListener('transitionend', () => toast.remove());
     }, duration);
 }

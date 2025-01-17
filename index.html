@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/toast.css">
+ 
+
 </head>
 
 <body>
-    <header class="top">
+
+
+    <header class="top" style="position: sticky;">
         <div class="top-left"> </div>
         <div class="top-middle">
             <div class="search-container">
@@ -48,7 +53,7 @@
                 style="border: none;"></iframe>
         </section>
     </main>
-
+    <div id="toast-container"  > </div>
     <script>
         function loadAllProducts() {
             const iframe = document.getElementById('productLoader');

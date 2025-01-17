@@ -1,58 +1,57 @@
-/* Toast container */
-.toast-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
+#toast-container {
+    position: fixed; /* Keeps the container in place */
+    bottom: 20px;    /* 20px from the bottom of the viewport */
+    left: 20px;      /* 20px from the left of the viewport */
+    z-index: 1000;   /* Ensure it appears above other elements */
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column-reverse; /* New to ensure newest toast pops up at the bottom */
+    gap: 10px;       /* Adds spacing between toasts */
 }
 
-/* Toast message styling */
 .toast {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 250px;
-    max-width: 400px;
-    padding: 15px 20px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    animation: slideIn 0.3s ease, fadeOut 0.3s ease 4.7s forwards;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    background-color: #323232; /* Default background color */
+    color: white;              /* Text color */
+    padding: 10px 20px;        /* Padding for content */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 14px;           /* Font size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    animation: slideIn 0.3s ease-out, fadeOut 0.5s ease-in ${duration}ms; /* Slide and fade */
+    max-width: 300px;          /* Maximum width for the toast */
+    word-wrap: break-word;     /* Wrap long text */
 }
 
-/* Dismiss button */
-.toast .close-btn {
-    margin-left: 10px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    line-height: 1;
+.toast.hidden {
+    opacity: 0;
+    transform: translateY(20px); /* Moves it downward during fade-out */
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-/* Slide-in animation */
+.toast.info {
+    background-color: #2196F3; /* Blue for info toasts */
+}
+
+.toast.success {
+    background-color: #4CAF50; /* Green for success toasts */
+}
+
+.toast.error {
+    background-color: #F44336; /* Red for error toasts */
+}
+
 @keyframes slideIn {
     from {
-        transform: translateX(100%);
         opacity: 0;
+        transform: translateX(-100%);
     }
     to {
-        transform: translateX(0);
         opacity: 1;
+        transform: translateX(0);
     }
 }
 
-/* Fade-out animation */
 @keyframes fadeOut {
     to {
-        transform: translateX(100%);
         opacity: 0;
+        transform: translateY(20px);
     }
 }
