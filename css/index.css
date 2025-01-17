@@ -9,7 +9,8 @@ body {
 }
 
 /* Header and Footer */
-header, footer {
+header,
+footer {
     background-color: #036666;
     color: white;
     text-align: center;
@@ -80,7 +81,7 @@ main {
 }
 
 .search-input {
-    width: 300px;
+    width: 350px;
     padding: 10px 15px;
     border: 2px solid #ccc;
     border-radius: 30px;
@@ -90,7 +91,7 @@ main {
 }
 
 .search-input:focus {
-    width: 350px;
+    width: 400px;
     border-color: #2980b9;
     box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
 }
@@ -126,7 +127,8 @@ main {
     width: 100%;
 }
 
-.top-left, .top-right {
+.top-left,
+.top-right {
     flex: 1;
     display: flex;
     align-items: center;
@@ -145,6 +147,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 15px;
 }
 
 .cart-icon {
@@ -175,7 +178,9 @@ main {
         height: auto;
     }
 
-    .top-left, .top-middle, .top-right {
+    .top-left,
+    .top-middle,
+    .top-right {
         flex: none;
         width: 100%;
     }
@@ -187,4 +192,36 @@ main {
     .search-input:focus {
         width: 90%;
     }
+}
+
+/*------------------------profile----------------------------------*/
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+/* Profile Icon Button */
+.profile-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+    filter: brightness(1.2); /* Brightens the icon */
 }
