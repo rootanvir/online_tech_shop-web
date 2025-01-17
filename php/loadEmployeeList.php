@@ -104,7 +104,7 @@ $result = $conn->query($sql);
                             <td>
                                 <!-- Edit and Delete links -->
                                 <a href="?edit_id=<?= $row['employee_id'] ?>" title="Edit">✏️</a>
-                                <a href="?delete_id=<?= $row['employee_id'] ?>" title="Delete" onclick="return confirm('Are you sure you want to delete this employee?')">⛔</a>
+                                <a href="?delete_id=<?= $row['employee_id'] ?>" title="Delete" onclick="return confirm('Are you sure you want to delete this employee?')">❌</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
@@ -144,7 +144,6 @@ $result = $conn->query($sql);
                     <option value="" disabled selected>Select Gender</option>
                     <option value="Male" <?= (isset($edit_row['employee_gender']) && $edit_row['employee_gender'] == 'Male') ? 'selected' : '' ?>>Male</option>
                     <option value="Female" <?= (isset($edit_row['employee_gender']) && $edit_row['employee_gender'] == 'Female') ? 'selected' : '' ?>>Female</option>
-                    <option value="Other" <?= (isset($edit_row['employee_gender']) && $edit_row['employee_gender'] == 'Other') ? 'selected' : '' ?>>Other</option>
                 </select>
 
                 <label for="employee_address">Address</label>

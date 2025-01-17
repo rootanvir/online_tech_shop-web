@@ -16,10 +16,8 @@ h2 {
   color: #333;
 }
 
-/* Add a scrollable container around the table */
 .table-container {
   max-height: 400px;
-  /* Adjust based on your design */
   overflow-y: auto;
   border: 1px solid #ccc;
 }
@@ -49,8 +47,8 @@ a {
   color: #007bff;
   margin: 0 5px;
   border-radius: 4px;
-  display: inline-block; /* Ensure buttons are in-line */
-  text-align: center; /* Ensure text inside the button is centered */
+  display: inline-block;
+  text-align: center;
 }
 
 a:hover {
@@ -76,7 +74,7 @@ a[title="Delete"]:hover {
 /* Ensures the buttons inside table cells are in one line */
 table td a {
   display: inline-block;
-  margin: 0 8px; /* Adjust spacing between buttons */
+  margin: 0 5px; /* Adjust spacing between buttons */
 }
 
 /* ============= */
