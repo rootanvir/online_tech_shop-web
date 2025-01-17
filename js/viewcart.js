@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Check stock availability
             const cartItem = cart.find(item => item.productId === productId);
-            if (cartItem.quantity <= productDetails.product_quantity) {
+            if (cartItem.quantity < productDetails.product_quantity) {
                 cart = cart.map(item => item.productId === productId ? { ...item, quantity: item.quantity + 1 } : item);
             } else {
                 alert("Cannot add more items. Stock limit reached.");
