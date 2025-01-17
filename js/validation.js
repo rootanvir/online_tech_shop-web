@@ -221,10 +221,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Validate product price
-        const price = priceInput.value.trim();
-        if (isEmptyOrSpaces(price) || isNaN(price) || price <= 0) {
+        const price = parseFloat(priceInput.value.trim());
+        if (isNaN(price) || price <= 0) {
+            // alert("Product price must be a positive number.");
             isValid = false;
         }
+        // Validate product price
+        // const price = priceInput.value.trim();
+        // if ((isEmptyOrSpaces(price) || isNaN(price) ) || price >= 0) {
+        //     isValid = false;
+        // }
 
         // Validate product quantity
         const quantity = quantityInput.value.trim();
