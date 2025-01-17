@@ -7,17 +7,16 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/toast.css">
- 
+
 
 </head>
 
 <body>
-
     <header class="top">
         <div class="top-left"> </div>
         <div class="top-middle">
             <div class="search-container">
-                <input type="search" class="search-input" placeholder="Search...">
+                <input id="search_bar" type="search" class="search-input" placeholder="Search...">
             </div>
         </div>
         <div class="top-right">
@@ -50,16 +49,20 @@
 
         <section class="content-section">
             <!-- Embed the product loader dynamically -->
-            <iframe id="productLoader" src="html/loadProduct.html" width="100%" height="1500px"style="border: none;"></iframe>
+            <iframe id="productLoader" src="html/loadProduct.html" width="100%" height="1500px"
+                style="border: none;"></iframe>
+                
         </section>
     </main>
-    <div id="toast-container"  > </div>
+    <div id="toast-container"> </div>   
     <script>
         function loadAllProducts() {
             const iframe = document.getElementById('productLoader');
             iframe.contentWindow.location.reload();
         }
     </script>
+
+
 </body>
 
 </html>
