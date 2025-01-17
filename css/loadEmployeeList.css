@@ -16,25 +16,30 @@ h2 {
   color: #333;
 }
 
+/* Add a scrollable container around the table */
+.table-container {
+  max-height: 400px;
+  /* Adjust based on your design */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
 }
-table th,
-table td {
+
+th,
+td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ddd;
 }
 
-table th {
-  background-color: #f4f4f4;
-}
-
-table td {
-  text-align: center; /* Ensure text is centered in table cells */
-  vertical-align: middle; /* Align buttons vertically */
+th {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
 }
 
 a {
