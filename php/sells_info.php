@@ -1,14 +1,26 @@
 <?php
 // Include the database connection
-include('db_connection.php'); // Assuming the database connection code is saved in db_connection.php
+include('db_connection.php');
 
-// Fetch the sales data
-$sql = "SELECT sell_id, customer_name, customer_email, products, quantity, price, time FROM sells";
-$result = mysqli_query($conn, $sql);
+// Fetch sales data for the table
+$sql_table = "SELECT sell_id, customer_name, customer_email, products, quantity, price, time FROM sells";
+$result_table = mysqli_query($conn, $sql_table);
 
-if (!$result) {
-    die("Query failed: " . mysqli_error($conn));
+// Fetch sales data for the chart
+$sql_chart = "SELECT products, SUM(quantity) AS total_quantity FROM sells GROUP BY products";
+$result_chart = mysqli_query($conn, $sql_chart);
+
+$products = [];
+$quantities = [];
+
+// Process data for the chart
+while ($row = mysqli_fetch_assoc($result_chart)) {
+    $products[] = $row['products'];
+    $quantities[] = $row['total_quantity'];
 }
+
+// Close the database connection
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +29,12 @@ if (!$result) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales Data</title>
+    <title>Sales Data and Statistics</title>
     <style>
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 30px;
         }
 
         table,
@@ -39,11 +52,24 @@ if (!$result) {
         th {
             background-color: #f2f2f2;
         }
+
+        canvas {
+            margin: 20px 0;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Pass PHP data to JavaScript
+        const products = <?php echo json_encode($products); ?>;
+        const quantities = <?php echo json_encode($quantities); ?>;
+    </script>
+    <script src="../js/sell_statistic.js" defer></script>
 </head>
 
 <body>
-    <h1>Sales Data</h1>
+    <h1>Sales Information</h1>
+
+    <!-- Sales Table -->
     <table>
         <thead>
             <tr>
@@ -59,9 +85,9 @@ if (!$result) {
         <tbody>
             <?php
             // Check if any rows were returned
-            if (mysqli_num_rows($result) > 0) {
+            if (mysqli_num_rows($result_table) > 0) {
                 // Fetch each row and display it
-                while ($row = mysqli_fetch_assoc($result)) {
+                while ($row = mysqli_fetch_assoc($result_table)) {
                     echo "<tr>
                         <td>{$row['sell_id']}</td>
                         <td>{$row['customer_name']}</td>
@@ -75,12 +101,13 @@ if (!$result) {
             } else {
                 echo "<tr><td colspan='7'>No sales data found</td></tr>";
             }
-
-            // Close the database connection
-            mysqli_close($conn);
             ?>
         </tbody>
     </table>
+
+    <!-- Sales Statistics Chart -->
+    <h2>Sales Statistics</h2>
+    <canvas id="salesChart" width="800" height="400"></canvas>
 </body>
 
 </html>
