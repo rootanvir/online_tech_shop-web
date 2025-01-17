@@ -13,6 +13,8 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM employee";
 $result = $conn->query($sql);
 
+echo "<h1>Employee Information</h1>";
+
 // Check if any data was returned
 if ($result->num_rows > 0) {
     echo "<table border='1' cellpadding='10' cellspacing='0' style=width:100%>";
@@ -54,4 +56,3 @@ if ($result->num_rows > 0) {
 
 // Close connection
 $conn->close();
-?>

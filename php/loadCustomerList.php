@@ -14,16 +14,23 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM customer";
 $result = $conn->query($sql);
 
+echo "<h1>Customer Information</h1>";
+
 // Display customer data in a table
 if ($result->num_rows > 0) {
-    echo "<table border='1' cellpadding='10' cellspacing='0' style='width:100%; text-align:left;'>";
-    echo "<tr>
-            <th>Mobile Number</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Date of Birth</th>
-          </tr>";
+
+    // Add a scrollable container for the table
+    echo "<div style='overflow-y: auto; max-height: 400px;'>";
+
+    // Start table and apply some inline styles
+    echo "<table border='1' cellpadding='10' cellspacing='0' style='width:100%; text-align:left; border-collapse: collapse;'>
+            <tr style='background-color: #f2f2f2;'>
+                <th>Mobile Number</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+            </tr>";
 
     // Loop through and display each row of data
     while ($row = $result->fetch_assoc()) {
@@ -37,10 +44,10 @@ if ($result->num_rows > 0) {
     }
 
     echo "</table>";
+    echo "</div>"; // End scrollable container
 } else {
     echo "No customers found.";
 }
 
 // Close connection
 $conn->close();
-?>
