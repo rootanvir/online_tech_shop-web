@@ -1,114 +1,74 @@
 [
     {
-        "product_id": "0001",
-        "product_category": "boi",
-        "product_name": "potter",
-        "product_price": "400.00",
-        "product_quantity": "5",
-        "product_location": "..\/product_img\/p1.png"
+        "product_id": "P001",
+        "product_category": "Electronic",
+        "product_name": "phone",
+        "product_price": "699.00",
+        "product_quantity": "10",
+        "product_location": "Warehouse A"
     },
     {
-        "product_id": "0002",
-        "product_category": "potter",
-        "product_name": "boi",
-        "product_price": "4500.00",
-        "product_quantity": "4",
-        "product_location": "..\/product_img\/p2.png"
+        "product_id": "P002",
+        "product_category": "Electronics",
+        "product_name": "Laptop",
+        "product_price": "999.99",
+        "product_quantity": "30",
+        "product_location": "Warehouse B"
     },
     {
-        "product_id": "0003",
-        "product_category": "fixed",
-        "product_name": "not fixed",
-        "product_price": "45.00",
-        "product_quantity": "45",
-        "product_location": "..\/product_img\/p16.png"
+        "product_id": "P003",
+        "product_category": "Appliances",
+        "product_name": "Microwave Oven",
+        "product_price": "199.99",
+        "product_quantity": "20",
+        "product_location": "Warehouse A"
     },
     {
-        "product_id": "0007",
-        "product_category": "soundbox",
-        "product_name": "dumbell",
-        "product_price": "1000.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p20.png"
+        "product_id": "P004",
+        "product_category": "Furniture",
+        "product_name": "Office Chair",
+        "product_price": "129.99",
+        "product_quantity": "100",
+        "product_location": "Warehouse C"
     },
     {
-        "product_id": "0008",
-        "product_category": "soundbox",
-        "product_name": "dumbell",
-        "product_price": "1000.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p21.png"
+        "product_id": "P005",
+        "product_category": "Furniture",
+        "product_name": "Dining Table",
+        "product_price": "399.99",
+        "product_quantity": "15",
+        "product_location": "Warehouse C"
     },
     {
-        "product_id": "0010",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p23.png"
+        "product_id": "P006",
+        "product_category": "Clothing",
+        "product_name": "T-Shirt",
+        "product_price": "19.99",
+        "product_quantity": "200",
+        "product_location": "Warehouse D"
     },
     {
-        "product_id": "0012",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p24.png"
+        "product_id": "P007",
+        "product_category": "Clothing",
+        "product_name": "Jeans",
+        "product_price": "49.99",
+        "product_quantity": "150",
+        "product_location": "Warehouse D"
     },
     {
-        "product_id": "0013",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p25.png"
+        "product_id": "P008",
+        "product_category": "Toys",
+        "product_name": "Building Blocks",
+        "product_price": "24.99",
+        "product_quantity": "80",
+        "product_location": "Warehouse E"
     },
     {
-        "product_id": "0014",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p26.png"
-    },
-    {
-        "product_id": "0015",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p27.png"
-    },
-    {
-        "product_id": "0016",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p28.png"
-    },
-    {
-        "product_id": "0017",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p29.png"
-    },
-    {
-        "product_id": "0018",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p30.png"
-    },
-    {
-        "product_id": "0019",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p31.png"
+        "product_id": "P009",
+        "product_category": "Books",
+        "product_name": "Science Fiction Novel",
+        "product_price": "14.99",
+        "product_quantity": "120",
+        "product_location": "Warehouse F"
     }
 ]
