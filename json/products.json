@@ -1,44 +1,27 @@
-<<<<<<< HEAD
 [
     {
         "product_id": "0001",
-        "product_category": "book",
-        "product_name": "harry",
-        "product_price": "300.00",
-        "product_quantity": "2",
+        "product_category": "boi",
+        "product_name": "potter",
+        "product_price": "400.00",
+        "product_quantity": "5",
         "product_location": "..\/product_img\/p1.png"
     },
     {
         "product_id": "0002",
-        "product_category": "  ",
-        "product_name": "  ",
-        "product_price": "-0.01",
-        "product_quantity": "-1",
+        "product_category": "potter",
+        "product_name": "boi",
+        "product_price": "4500.00",
+        "product_quantity": "4",
         "product_location": "..\/product_img\/p2.png"
     },
     {
         "product_id": "0003",
-        "product_category": "fafa",
-        "product_name": "fdfa",
-        "product_price": "0.02",
-        "product_quantity": "1",
+        "product_category": "fixed",
+        "product_name": "not fixed",
+        "product_price": "45.00",
+        "product_quantity": "45",
         "product_location": "..\/product_img\/p16.png"
-    },
-    {
-        "product_id": "0004",
-        "product_category": "fsdf",
-        "product_name": "afasf",
-        "product_price": "0.04",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p18.png"
-    },
-    {
-        "product_id": "0005",
-        "product_category": "fsdf",
-        "product_name": "afasf",
-        "product_price": "100.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p19.png"
     },
     {
         "product_id": "0007",
@@ -143,40 +126,5 @@
         "product_price": "3.00",
         "product_quantity": "3",
         "product_location": "..\/product_img\/p32.png"
-    },
-    {
-        "product_id": "0022",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "-1.00",
-        "product_quantity": "45",
-        "product_location": "..\/product_img\/p33.png"
-    },
-    {
-        "product_id": "0024",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "-1.00",
-        "product_quantity": "45",
-        "product_location": "..\/product_img\/p34.png"
-    },
-    {
-        "product_id": "0026",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "-1.00",
-        "product_quantity": "45",
-        "product_location": "..\/product_img\/p35.png"
-    },
-    {
-        "product_id": "0027",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "-1.00",
-        "product_quantity": "45",
-        "product_location": "..\/product_img\/p36.png"
     }
 ]
-=======
-[]
->>>>>>> 2ab062cc6b3ab81dec84a7720e3b95b8c6a6c5a8
