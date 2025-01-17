@@ -107,7 +107,7 @@ if (isset($_GET['edit_product_id'])) {
                                 <!-- Edit Button -->
                                 <form method="GET" action="" style="display: inline;">
                                     <input type="hidden" name="edit_product_id" value="<?= $row['product_id'] ?>">
-                                    <button type="submit" name="edit_product" style="margin-bottom: 8px;">Edit</button>
+                                    <button type="submit" name="edit_product" style="margin-bottom: 5px;">Edit</button>
                                 </form>
 
                                 <!-- Delete Button -->
