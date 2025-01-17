@@ -1,109 +1,94 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cartItemsContainer = document.getElementById("cart-items-container");
-    const totalQuantityElement = document.getElementById("total-quantity");
-    const totalPriceElement = document.getElementById("total-price");
+    const cartItemsContainer = document.querySelector("#cart-items-container tbody");
+    const subTotalElement = document.getElementById("sub-total");
+    const shippingCostElement = document.getElementById("shipping-cost");
+    const totalAmountElement = document.getElementById("total-amount");
 
-    // Function to fetch product details from products.json
+    const SHIPPING_COST = 5.00; // Fixed shipping cost
+
+    // Fetch product details from JSON
     const fetchProductDetails = async (productId) => {
         try {
-            console.log("Attempting to fetch products.json...");
-            const response = await fetch("../json/products.json"); // Assuming products.json is in the same directory
-    
-            // Check if the response is successful
-            if (!response.ok) {
-                throw new Error(`Failed to load products.json: ${response.status} ${response.statusText}`);
-            }
-    
+            const response = await fetch("../json/products.json");
             const productData = await response.json();
-            console.log("Products data fetched successfully:", productData);
-    
-            // then Find product by product_id
-            const product = productData.find(item => item.product_id === productId);
-    
-            if (product) {
-                // Convert product price to float
-                product.product_price = parseFloat(product.product_price);
-            }
-    
-            // otherwise Return product details
-            return product || { product_name: "Unknown Product", product_price: 0, product_location: "Unknown Location" };
+            return productData.find(item => item.product_id === productId) || null;
         } catch (error) {
-            // Catch any error in fetching and log it
-            console.error("Error fetching product data:", error);
-            return {productId, product_name: "Unknown Product", product_price: 0, product_location: "Unknown Location" };
+            console.error("Error fetching product details:", error);
+            return null;
         }
     };
-    
 
-    // Function to get cart from cookie
+    // Get cart from cookies
     const getCartFromCookie = () => {
-        const cartCookie = getCookie("cart");
-        return cartCookie ? JSON.parse(cartCookie) : [];
+        const cartCookie = document.cookie.match(/cart=([^;]*)/);
+        return cartCookie ? JSON.parse(decodeURIComponent(cartCookie[1])) : [];
     };
 
-    // Function to get a cookie by name
-    function getCookie(name) {
-        const matches = document.cookie.match(new RegExp(
-            "(?:^|; )" + name.replace(/([.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-        ));
-        return matches ? decodeURIComponent(matches[1]) : undefined;
-    }
+    // Save cart back to cookies
+    const saveCartToCookie = (cart) => {
+        document.cookie = `cart=${encodeURIComponent(JSON.stringify(cart))}; path=/; max-age=31536000`;
+    };
 
-    // Render cart items and calculate totals
+    // Render cart items
     const renderCart = async () => {
         const cart = getCartFromCookie();
-        let totalQuantity = 0;
-        let totalPrice = 0.0;
-
-        cartItemsContainer.innerHTML = ""; // Clear the container
+        let subTotal = 0;
+        cartItemsContainer.innerHTML = "";
 
         for (const item of cart) {
             const { productId, quantity } = item;
             const productDetails = await fetchProductDetails(productId);
 
-            totalQuantity += quantity;
-            totalPrice += productDetails.product_price * quantity;
+            if (!productDetails) continue;
 
-            // Create cart item element
-            const cartItem = document.createElement("div");
-            cartItem.classList.add("cart-item");
-            cartItem.innerHTML = `
-                <img src="${productDetails.product_location}" alt="Item Image">
-                <div class="item-details">
-                    <h3>${productDetails.product_name}</h3>
-                    <h3>Id: ${productId}</h3>
-                    <p>Price: ${productDetails.product_price.toFixed(2)}</p>
-                    <p>Location: ${productDetails.product_location}</p>
-                    <p>Quantity: ${quantity}</p>
-                    <p>Total: $${(productDetails.product_price * quantity).toFixed(2)}</p>
-                </div>
-                <div class="cart-actions">
-                    <button class="details" data-product-id="${productId}">View Details</button>
+            const productPrice = parseFloat(productDetails.product_price || 0);
+            const itemTotal = productPrice * quantity;
+            subTotal += itemTotal;
+
+            // Render row
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>
+                    <img src="${productDetails.product_location}" alt="Product Image" width="50">
+                    ${productDetails.product_name}
+                </td>
+                <td>$${productPrice.toFixed(2)}</td>
+                <td>
+                    <button class="decrement" data-product-id="${productId}">-</button>
+                    <span>${quantity}</span>
+                    <button class="increment" data-product-id="${productId}">+</button>
+                </td>
+                <td>$${itemTotal.toFixed(2)}</td>
+                <td>
                     <button class="remove" data-product-id="${productId}">Remove</button>
-                </div>
+                </td>
             `;
-            cartItemsContainer.appendChild(cartItem);
+            cartItemsContainer.appendChild(row);
         }
 
         // Update totals
-        totalQuantityElement.textContent = totalQuantity;
-        totalPriceElement.textContent = totalPrice.toFixed(2);
+        subTotalElement.textContent = subTotal.toFixed(2);
+        shippingCostElement.textContent = subTotal > 0 ? SHIPPING_COST.toFixed(2) : "0.00";
+        totalAmountElement.textContent = (subTotal + (subTotal > 0 ? SHIPPING_COST : 0)).toFixed(2);
     };
 
-    // Remove item from cart
+    // Event listeners for cart actions
     cartItemsContainer.addEventListener("click", (event) => {
-        if (event.target.classList.contains("remove")) {
-            const productId = event.target.getAttribute("data-product-id");
-            let cart = getCartFromCookie();
+        const target = event.target;
+        const productId = target.getAttribute("data-product-id");
+        let cart = getCartFromCookie();
 
+        if (target.classList.contains("remove")) {
             cart = cart.filter(item => item.productId !== productId);
-
-            // Save updated cart back to cookie
-            document.cookie = `cart=${JSON.stringify(cart)}; path=/; max-age=31536000`;
-
-            renderCart(); // Re-render the cart
+        } else if (target.classList.contains("increment")) {
+            cart = cart.map(item => item.productId === productId ? { ...item, quantity: item.quantity + 1 } : item);
+        } else if (target.classList.contains("decrement")) {
+            cart = cart.map(item => item.productId === productId && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item);
         }
+
+        saveCartToCookie(cart);
+        renderCart();
     });
 
-    renderCart(); // Initial render
+    renderCart();
 });

@@ -1,23 +1,63 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart View</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="../css/cartView.css">
 </head>
 <body>
-    <div id="cart">
-        <h1>Your Saved Items</h1>
-        <div id="cart-items-container"></div> <!-- Container to dynamically populate cart items -->
-        <div id="cart-summary">
-            <h3>Total Items: <span id="total-quantity">0</span></h3>
-            <h3>Total Price: $<span id="total-price">0.00</span></h3>
+    <div id="cart-container">
+        <!-- Left side: Shopping cart -->
+        <div id="shopping-cart">
+            <h1>My Shopping Cart</h1>
+            <table id="cart-items-container">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Items will be dynamically rendered here -->
+                </tbody>
+            </table>
         </div>
+        <!-- Right side: Order summary -->
+        <div id="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Sub Total</span>
+                <span>৳<span id="sub-total">0</span></span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping Cost</span>
+                <span>৳<span id="shipping-cost">0</span></span>
+            </div>
+            <hr />
+            <div class="summary-row total">
+                <span>Total Amount</span>
+                <span>৳<span id="total-amount">0</span></span>
+            </div>
+            <div class="coupon">
+                <input type="text" id="coupon-code" placeholder="Enter your coupon code" />
+                <button id="apply-coupon">Apply</button>
+            </div>
+            <p class="sign-in">* Please <a href="signin.html">Sign In</a> to apply coupon</p>
+            <button id="proceed-to-checkout">Proceed to Checkout</button>
+        </div>
+        
+        <!-- <div id="order-summary">
+            <h2>Order Summary</h2>
+            <p>Sub Total: $<span id="sub-total">0.00</span></p>
+            <p>Shipping Cost: $<span id="shipping-cost">0.00</span></p>
+            <p>Total Amount: $<span id="total-amount">0.00</span></p>
+            <button id="proceed-to-checkout">Proceed to Checkout</button>
+        </div> -->
     </div>
-    <script src="../js/viewcart.js"></script> <!-- Reference to JavaScript file -->
+    <script src="../js/viewcart.js"></script>
 </body>
 </html>
-

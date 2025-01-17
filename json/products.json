@@ -38,5 +38,37 @@
         "product_price": "100.00",
         "product_quantity": "3",
         "product_location": "..\/product_img\/p19.png"
+    },
+    {
+        "product_id": "0007",
+        "product_category": "soundbox",
+        "product_name": "dumbell",
+        "product_price": "1000.00",
+        "product_quantity": "1",
+        "product_location": "..\/product_img\/p20.png"
+    },
+    {
+        "product_id": "0008",
+        "product_category": "soundbox",
+        "product_name": "dumbell",
+        "product_price": "1000.00",
+        "product_quantity": "1",
+        "product_location": "..\/product_img\/p21.png"
+    },
+    {
+        "product_id": "0009",
+        "product_category": "soundboxOne",
+        "product_name": "dumbellTwo",
+        "product_price": "1000.00",
+        "product_quantity": "115",
+        "product_location": "..\/product_img\/p22.png"
+    },
+    {
+        "product_id": "0010",
+        "product_category": "soundboxOne",
+        "product_name": "dumbellTwo",
+        "product_price": "3.00",
+        "product_quantity": "3",
+        "product_location": "..\/product_img\/p23.png"
     }
 ]
