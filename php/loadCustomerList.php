@@ -14,6 +14,8 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM customer";
 $result = $conn->query($sql);
 
+echo "<h1>Customer Information</h1>";
+
 // Display customer data in a table
 if ($result->num_rows > 0) {
     echo "<table border='1' cellpadding='10' cellspacing='0' style='width:100%; text-align:left;'>";
@@ -43,4 +45,3 @@ if ($result->num_rows > 0) {
 
 // Close connection
 $conn->close();
-?>
