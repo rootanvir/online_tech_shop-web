@@ -10,9 +10,14 @@ body {
   margin: auto;
 }
 
-.product-list,
-.form-container {
-  flex: 1;
+.product-list {
+  flex: 2; /* Takes 2/3 of the container */
+  max-height: 700px; /* Set a fixed height for the scroll view */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 table {
@@ -38,6 +43,7 @@ table img {
 }
 
 .form-container {
+  flex: 1; /* Takes 1/3 of the container */
   background: #f9f9f9;
   padding: 20px;
   border-radius: 5px;
@@ -104,5 +110,3 @@ table img {
   color: blue;
   text-decoration: none;
 }
-
-/*  */
