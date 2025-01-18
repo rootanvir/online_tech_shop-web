@@ -1,7 +1,7 @@
 [
     {
         "product_id": "0001",
-        "product_category": "boi",
+        "product_category": "book",
         "product_name": "potter",
         "product_price": "400.00",
         "product_quantity": "5",
@@ -10,7 +10,7 @@
     {
         "product_id": "0002",
         "product_category": "potter",
-        "product_name": "boi",
+        "product_name": "book",
         "product_price": "4500.00",
         "product_quantity": "4",
         "product_location": "..\/product_img\/p2.png"
@@ -102,13 +102,5 @@
         "product_price": "3.00",
         "product_quantity": "3",
         "product_location": "..\/product_img\/p30.png"
-    },
-    {
-        "product_id": "0019",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p31.png"
     }
 ]
