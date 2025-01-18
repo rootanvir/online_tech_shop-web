@@ -1,0 +1,66 @@
+[
+    {
+        "product_id": "P001",
+        "product_category": "Electronics",
+        "product_name": "phone",
+        "product_price": "699.00",
+        "product_quantity": "14",
+        "product_location": "Warehouse A"
+    },
+    {
+        "product_id": "P002",
+        "product_category": "Electronics",
+        "product_name": "Laptop",
+        "product_price": "999.99",
+        "product_quantity": "30",
+        "product_location": "Warehouse B"
+    },
+    {
+        "product_id": "P003",
+        "product_category": "Appliances",
+        "product_name": "Microwave Oven",
+        "product_price": "199.99",
+        "product_quantity": "20",
+        "product_location": "Warehouse A"
+    },
+    {
+        "product_id": "P004",
+        "product_category": "Furniture",
+        "product_name": "Office Chair",
+        "product_price": "129.99",
+        "product_quantity": "100",
+        "product_location": "Warehouse C"
+    },
+    {
+        "product_id": "P005",
+        "product_category": "Furniture",
+        "product_name": "Dining Table",
+        "product_price": "399.99",
+        "product_quantity": "15",
+        "product_location": "Warehouse C"
+    },
+    {
+        "product_id": "P006",
+        "product_category": "Clothing",
+        "product_name": "T-Shirt",
+        "product_price": "19.99",
+        "product_quantity": "200",
+        "product_location": "Warehouse D"
+    },
+    {
+        "product_id": "P007",
+        "product_category": "Clothing",
+        "product_name": "Jeans",
+        "product_price": "49.99",
+        "product_quantity": "150",
+        "product_location": "Warehouse D"
+    },
+    {
+        "product_id": "P008",
+        "product_category": "Toys",
+        "product_name": "Building Blocks",
+        "product_price": "24.99",
+        "product_quantity": "50",
+        "product_location": "Warehouse E"
+    }
+]

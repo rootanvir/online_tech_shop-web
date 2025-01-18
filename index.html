@@ -7,8 +7,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/toast.css">
-
-
 </head>
 
 <body>
@@ -39,7 +37,10 @@
         <a href="html/managerDash.html">Manager</a>
         <a href="html/signin.html">Sign In</a>
     </nav>
+
+    <!-- Container to display search results -->
     <div id="search_results"></div>
+
     <main class="full">
         <section class="left-section">
             <div class="left-option">
@@ -51,10 +52,9 @@
             <!-- Embed the product loader dynamically -->
             <iframe id="productLoader" src="html/loadProduct.html" width="100%" height="1500px"
                 style="border: none;"></iframe>
-                
         </section>
     </main>
-    <div id="toast-container"> </div> 
+    <div id="toast-container"></div>
     <script src="js/searchProduct.js"></script>
 
     <script>
@@ -63,8 +63,6 @@
             iframe.contentWindow.location.reload();
         }
     </script>
-
-
 </body>
 
 </html>

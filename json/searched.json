@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "product_id": "P008",
+        "product_category": "Toys",
+        "product_name": "Building Blocks",
+        "product_price": 24.99,
+        "product_quantity": 50,
+        "product_location": "Warehouse E"
+    }
+]
