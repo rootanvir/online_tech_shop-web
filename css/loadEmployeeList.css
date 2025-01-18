@@ -17,7 +17,7 @@ h2 {
 }
 
 .table-container {
-  max-height: 400px; /* Set a maximum height for the table container */
+  max-height: 400px;
   overflow-y: auto; /* Enable vertical scrolling */
   border: 1px solid #ccc;
   background-color: #fff;
@@ -120,4 +120,36 @@ table td a {
 
 .form-container button:hover {
   background-color: #45a049;
+}
+
+/* --------- */
+
+/* General styling for the search input box */
+.searchBox {
+  width: 123%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styling when the input is focused */
+.searchBox:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Placeholder text styling */
+.searchBox::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Optional - to target the specific input with ID */
+#EmployeeSearchBox {
+  font-family: Arial, sans-serif;
 }

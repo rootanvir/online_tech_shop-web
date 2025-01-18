@@ -77,16 +77,25 @@ if (isset($_GET['edit_product_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List and Update Form</title>
     <link rel="stylesheet" href="../css/loadProductList.css">
+    <script src="../js/search_table.js" defer></script>
+
+
+
 </head>
 
 <body>
 
-        <div class="container">
-            <!-- Product List -->
-            <div class="product-list">
-                <h2>Product List</h2>
-                <?php if ($result->num_rows > 0): ?>
-                    <table>
+    <div class="container">
+        <!-- Product List -->
+        <div class="product-list">
+            <h2>Product List</h2>
+
+            <!-- Search Box -->
+            <input type="text" id="productSearchInput" onkeyup="searchTable()" placeholder="Search for products...">
+
+            <?php if ($result->num_rows > 0): ?>
+                <table id="productTable">
+                    <thead>
                         <tr>
                             <th>Product ID</th>
                             <th>Category</th>
@@ -96,6 +105,8 @@ if (isset($_GET['edit_product_id'])) {
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <?php while ($row = $result->fetch_assoc()): ?>
                             <tr>
                                 <td><?= htmlspecialchars($row['product_id']) ?></td>
@@ -128,48 +139,46 @@ if (isset($_GET['edit_product_id'])) {
                                         </form>
                                     </div>
                                 </td>
-
                             </tr>
                         <?php endwhile; ?>
-                    </table>
-                <?php else: ?>
-                    <p>No product data found.</p>
-                <?php endif; ?>
-            </div>
-
-            <!-- Update Form -->
-            <div class="form-container">
-                <h2>Update Product</h2>
-                <form method="POST" action="">
-                    <label for="product_id">Product ID</label>
-                    <input type="text" id="product_id" name="product_id"
-                        value="<?= $editProductData ? htmlspecialchars($editProductData['product_id']) : '' ?>" required
-                        readonly>
-
-                    <label for="product_category">Category</label>
-                    <input type="text" id="product_category" name="product_category"
-                        value="<?= $editProductData ? htmlspecialchars($editProductData['product_category']) : '' ?>"
-                        required>
-
-                    <label for="product_name">Name</label>
-                    <input type="text" id="product_name" name="product_name"
-                        value="<?= $editProductData ? htmlspecialchars($editProductData['product_name']) : '' ?>"
-                        required>
-
-                    <label for="product_price">Price</label>
-                    <input type="number" id="product_price" name="product_price"
-                        value="<?= $editProductData ? htmlspecialchars($editProductData['product_price']) : '' ?>"
-                        step="0.01" required>
-
-                    <label for="product_quantity">Quantity</label>
-                    <input type="number" id="product_quantity" name="product_quantity"
-                        value="<?= $editProductData ? htmlspecialchars($editProductData['product_quantity']) : '' ?>"
-                        required>
-
-                    <button type="submit" name="update_product">Update Product</button>
-                </form>
-            </div>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No product data found.</p>
+            <?php endif; ?>
         </div>
+
+        <!-- Update Form -->
+        <div class="form-container">
+            <h2>Update Product</h2>
+            <form method="POST" action="">
+                <label for="product_id">Product ID</label>
+                <input type="text" id="product_id" name="product_id"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_id']) : '' ?>" required
+                    readonly>
+
+                <label for="product_category">Category</label>
+                <input type="text" id="product_category" name="product_category"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_category']) : '' ?>" required>
+
+                <label for="product_name">Name</label>
+                <input type="text" id="product_name" name="product_name"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_name']) : '' ?>" required>
+
+                <label for="product_price">Price</label>
+                <input type="number" id="product_price" name="product_price"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_price']) : '' ?>" step="0.01"
+                    required>
+
+                <label for="product_quantity">Quantity</label>
+                <input type="number" id="product_quantity" name="product_quantity"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_quantity']) : '' ?>" required>
+
+                <button type="submit" name="update_product">Update Product</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
