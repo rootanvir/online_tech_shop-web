@@ -47,4 +47,3 @@ echo json_encode([
 
 // Close the database connection
 $conn->close();
-?>
