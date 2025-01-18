@@ -5,9 +5,9 @@ body {
 
 .container {
   display: flex;
-  gap: 20px;
   max-width: 1200px;
   margin: auto;
+  gap: 15px;
 }
 
 .product-list {
@@ -43,7 +43,8 @@ table img {
 }
 
 .form-container {
-  flex: 1; /* Takes 1/3 of the container */
+  flex: 0.7; /* Reduce the width (takes half of its original space) */
+  max-width: 330px; /* Set a maximum width to limit the size */
   background: #f9f9f9;
   padding: 20px;
   border-radius: 5px;
