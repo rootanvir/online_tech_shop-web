@@ -78,7 +78,7 @@ $result = $conn->query($sql);
                 <h1>Employee Information</h1>
 
                 <!-- Search Box -->
-                <input type="text" class="searchBox" id="EmployeeSearchBox" onkeyup="searchTable()" placeholder="Search employees...">
+                <input type="text" class="searchBox" id="EmployeeSearchBox" onkeyup="employeeSearchTable()" placeholder="Search employees...">
 
                 <?php if ($result->num_rows > 0): ?>
                     <table id="employeeTable">

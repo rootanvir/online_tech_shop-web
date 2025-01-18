@@ -30,38 +30,9 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Data and Statistics</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
 
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
+    <link rel="stylesheet" href="../css/sell_info.css">
 
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .table-container {
-            max-height: 250px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-        }
-
-        canvas {
-            margin: 20px 0;
-        }
-    </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Pass PHP data to JavaScript

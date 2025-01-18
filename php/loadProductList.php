@@ -91,7 +91,7 @@ if (isset($_GET['edit_product_id'])) {
             <h2>Product List</h2>
 
             <!-- Search Box -->
-            <input type="text" id="productSearchInput" onkeyup="searchTable()" placeholder="Search for products...">
+            <input type="text" id="productSearchInput" onkeyup="productSearchTable()" placeholder="Search for products...">
 
             <?php if ($result->num_rows > 0): ?>
                 <table id="productTable">

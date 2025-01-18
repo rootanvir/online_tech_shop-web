@@ -15,16 +15,21 @@ $sql = "SELECT * FROM customer";
 $result = $conn->query($sql);
 
 echo "<h1>Customer Information</h1>";
+?>
 
+<!-- Search Box -->
+<input type="text" id="customerSearchInput" onkeyup="customerSearchTable()" placeholder="Search for customers...">
+
+<?php
 // Display customer data in a table
 if ($result->num_rows > 0) {
 
     // Add a scrollable container for the table
-    echo "<div style='overflow-y: auto; max-height: 400px;'>";
+    echo "<div>";
 
     // Start table and apply some inline styles
-    echo "<table border='1' cellpadding='10' cellspacing='0' style='width:100%; text-align:left; border-collapse: collapse;'>
-            <tr style='background-color: #f2f2f2;'>
+    echo "<table id='customerTable'>
+            <tr>
                 <th>Mobile Number</th>
                 <th>Name</th>
                 <th>Email</th>
@@ -51,3 +56,11 @@ if ($result->num_rows > 0) {
 
 // Close connection
 $conn->close();
+?>
+
+
+<!-- link to the external JavaScript file -->
+<script src="../js/search_table.js"></script>
+
+<!-- link to the external css file -->
+<link rel="stylesheet" href="../css/loadCustomerList.css">
