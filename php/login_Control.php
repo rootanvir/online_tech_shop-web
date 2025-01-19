@@ -24,7 +24,7 @@ $result = $conn->query($query);
 if ($result->num_rows > 0) {
     // If user found in 'customer' table
     $_SESSION['username'] = $user_input_username;
-    $_SESSION['role'] = 'customer'; // Set role as customer
+    $_SESSION['role'] = 'Customer'; // Set role as customer
     header("Location: ../index.html"); // Redirect to customer dashboard
     exit();
 } else {

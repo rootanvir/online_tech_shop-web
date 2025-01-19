@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,20 @@
     <link rel="stylesheet" href="../css/managerDash.css">
 
 </head>
+
 <body>
     <header>
-        <h1> Welcome to Manager Dash Board</h1>
+        <div class="header-content">
+            <h1>Welcome to Manager Dashboard</h1>
+            <div class="header-links">
+                <a href="../index.html" class="styled-link">Go to Customer View</a>
+                <a href="../php/signout.php" class="styled-link" style="background-color: tomato;">Sign Out</a>
+            </div>
+        </div>
     </header>
+    
+    
+    
     <nav>
         <a href="../index.html">Sign out</a>
     </nav>
@@ -18,15 +29,22 @@
     <main>
         <section class="left-section">
             <div>
-                <button class="btn" id="btn-add-product" onclick="loadHTML('../php/addProduct.php','managerDash-iframe')">Add Product</button>
-                <button class="btn" id="btn-profile" onclick="loadHTML('profile.html','managerDash-iframe')">profiles</button>
+                <button class="btn" id="btn-add-product"
+                    onclick="loadHTML('../php/addProduct.php','managerDash-iframe')">Add Product</button>
+                <button class="btn" id="btn-product-list"
+                    onclick="loadHTML('../php/loadProductList.php','managerDash-iframe')">Product List</button>
+                <button class="btn" id="btn-profile"
+                    onclick="loadHTML('../php/profile.php','managerDash-iframe')">profiles</button>
+
             </div>
         </section>
 
         <section class="content-section">
-            <iframe id="managerDash-iframe" src="../php/addProduct.php" width="100%" height="100%" style="border:none;"></iframe>
+            <iframe id="managerDash-iframe" src="../php/addProduct.php" width="100%" height="100%"
+                style="border:none;"></iframe>
         </section>
     </main>
     <script src="../js/loadHTML.js"></script>
 </body>
+
 </html>
