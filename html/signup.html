@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Sign Up Page</title>
     <link rel="stylesheet" href="../css/signup.css">
 </head>
+
 <body>
     <div class="signup-container">
+        <!-- Only One H1 Heading -->
         <h1>Sign Up</h1>
+        <p style="text-align: center;  font-weight: bold; font-size: 24px;">Sign Up</p>
         <form action="../php/customer-insert.php" method="POST">
             <label for="mobile">Mobile Number</label>
             <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
@@ -29,8 +33,12 @@
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
             <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
-            <div class="div-btn"><button type="submit">Sign Up</button></div>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password"
+                required>
+
+            <div class="div-btn">
+                <button type="submit">Sign Up</button>
+            </div>
         </form>
         <p class="back-to-lo">
             Already have an account? <a href="signin.html">Back to Sign In</a>
@@ -38,4 +46,5 @@
     </div>
     <script src="../js/validation.js"></script>
 </body>
+
 </html>
