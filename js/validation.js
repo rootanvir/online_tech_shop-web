@@ -1,43 +1,4 @@
-// signin
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
-  const usernameInput = document.getElementById("username");
-  const passwordInput = document.getElementById("password");
-  // const employeePasswordInput = document.getElementById("employee_password");
-  const nameInput = document.getElementById("name");
-  // employee
-
-  form.addEventListener("submit", (event) => {
-    let isValid = true;
-    // Validate username
-    const username = usernameInput.value.trim();
-    const usernameRegex = /^[a-zA-Z]+$/; // Alphanumeric only
-
-    if (!usernameRegex.test(username)) {
-      event.preventDefault(); // Prevent form submission
-      isValid = false;
-      // return;
-    }
-
-    // Validate password
-    const password = passwordInput.value.trim();
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-
-    if (!passwordRegex.test(password)) {
-      event.preventDefault(); // Prevent form submission
-      isValid = false;
-    }
-
-    // If any validation fails, prevent form submission
-    if (!isValid) {
-      alert("please valid username and password");
-      event.preventDefault();
-    } else {
-      alert("successfully signin");
-    }
-  });
-});
+ 
 
 // validate signup
 document.addEventListener("DOMContentLoaded", () => {
