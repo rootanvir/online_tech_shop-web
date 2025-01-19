@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_SESSION['username']; // Ensure session is set, default to 'guest'
     $paymentMethod = $_POST['payment-method'];
     $totalCost = $_POST['total-cost'];
-    $status = 'order placed';
+    $status = 'pending';
     // Generate order ID
     $query = "SELECT order_id FROM ordered ORDER BY order_id DESC LIMIT 1";
     $result = $conn->query($query);
