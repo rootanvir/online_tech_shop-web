@@ -17,7 +17,7 @@ if ($user_role == 'Admin') {
     // Redirect to admin dashboard
     header('Location: ../html/adminDash.html');
     exit();
-} elseif ($user_role == 'customer') {
+} elseif ($user_role == 'Customer') {
     // Redirect to customer profile page
     header('Location: profile.php');
     exit();
