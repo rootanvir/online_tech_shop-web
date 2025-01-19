@@ -85,3 +85,36 @@ function customerSearchTable() {
     }
   }
 }
+
+// Auto search functionality for sells table
+function sellsSearchTable() {
+  // Get input value
+  let input = document.getElementById("sellsSearchInput");
+  let filter = input.value.toUpperCase();
+  let table = document.getElementById("sells_table");
+  let tr = table.getElementsByTagName("tr");
+
+  // Loop through all rows, except the first one (headers)
+  for (let i = 1; i < tr.length; i++) {
+    let td = tr[i].getElementsByTagName("td");
+    let found = false;
+
+    // Loop through each cell in the row to find if any text matches the search query
+    for (let j = 0; j < td.length; j++) {
+      if (td[j]) {
+        let cellText = td[j].textContent || td[j].innerText;
+        if (cellText.toUpperCase().indexOf(filter) > -1) {
+          found = true;
+          break;
+        }
+      }
+    }
+
+    // If found, show the row, otherwise hide it
+    if (found) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
+    }
+  }
+}
