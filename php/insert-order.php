@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../html/signin.html');
         exit();
     }
-    
+
     $username = $_SESSION['username']; // Ensure session is set, default to 'guest'
     $paymentMethod = $_POST['payment-method'];
     $totalCost = $_POST['total-cost'];
@@ -26,7 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Insert into database
     $query = "INSERT INTO ordered (order_id, customer_mobile_number, total_cost, payment_method,order_status) 
               VALUES ('$newOrderId', '$username', '$totalCost', '$paymentMethod','$status')";
-    if ($conn->query($query) === TRUE) {
+
+    $sqq = "INSERT INTO `sells` (`customer_mobile_number`, `price`, `time`, `payment_method`) VALUES ('$username', '$totalCost', NOW(), '$paymentMethod')";
+    if ($conn->query($query) && $conn->query($sqq) === TRUE) {
         // Order placed successfully
         echo "
             <style>
@@ -76,4 +78,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $conn->close();
 }
-?>
