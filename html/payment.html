@@ -11,54 +11,113 @@
 <body>
     <div class="payment-container">
         <h1>Payment</h1>
-        <p>Complete your payment details to proceed.</p>
+        <p>Select your payment method and provide the necessary details to proceed.</p>
 
-        <form class="payment-form" id="paymentForm">
+        <!-- Order Summary Section -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-details"></ul>
+            <h3 id="total-summary"></h3>
+        </div>
+
+        <form class="payment-form" id="paymentForm" action="../php/insert-order.php" method="POST">
+            <!-- Payment Method Selection -->
             <div class="form-group">
-                <label for="card-number">Card Number</label>
-                <input type="text" id="card-number" placeholder="Enter your card number" required maxlength="16"
-                    pattern="\d{16}" title="Card number must be 16 digits">
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="expiry-date">Expiry Date</label>
-                    <input type="date" id="expiry-date" placeholder="MM/YY" required pattern="\d{2}/\d{2}"
-                        title="Enter a valid expiry date in MM/YY format">
+                <label>Choose Payment Method:</label>
+                <div>
+                    <input type="radio" id="method-card" name="payment-method" value="card" onclick="togglePaymentFields()" required>
+                    <label for="method-card">Card</label>
                 </div>
-                <div class="form-group">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" placeholder="123" required maxlength="3" pattern="\d{3}"
-                        title="CVV must be 3 digits">
+                <div>
+                    <input type="radio" id="method-bkash" name="payment-method" value="bkash" onclick="togglePaymentFields()" required>
+                    <label for="method-bkash">Bkash</label>
+                </div>
+                <div>
+                    <input type="radio" id="method-cash" name="payment-method" value="cash" onclick="togglePaymentFields()" required>
+                    <label for="method-cash">Cash on Delivery</label>
                 </div>
             </div>
+
+            <!-- Card Payment Fields -->
+            <div id="card-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" maxlength="16"
+                        pattern="\d{16}" title="Card number must be 16 digits">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="date" id="expiry-date" name="expiry-date" placeholder="MM/YY"
+                            title="Enter a valid expiry date in MM/YY format">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" pattern="\d{3}"
+                            title="CVV must be 3 digits">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bkash Payment Fields -->
+            <div id="bkash-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="bkash-number">Bkash Mobile Number</label>
+                    <input type="text" id="bkash-number" name="bkash-number" placeholder="Enter your Bkash number" maxlength="11"
+                        pattern="\d{11}" title="Bkash number must be 11 digits">
+                </div>
+                <div class="form-group">
+                    <label for="bkash-transaction-id">Transaction ID</label>
+                    <input type="text" id="bkash-transaction-id" name="bkash-transaction-id" placeholder="Enter your transaction ID">
+                </div>
+            </div>
+
+            <!-- Cash on Delivery Message -->
+            <div id="cash-message" style="display: none;">
+                <p>You have chosen Cash on Delivery. No additional details are required. Complete your order to proceed.</p>
+            </div>
+
+            <!-- Hidden Input for Total Cost -->
+            <input type="hidden" id="total-cost" name="total-cost" value="">
+
             <button type="submit">Confirm Payment</button>
         </form>
-
-
     </div>
-
     <script>
-        document.getElementById("paymentForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            // Get all input fields
-            const cardNumber = document.getElementById("card-number");
-            const expiryDate = document.getElementById("expiry-date");
-            const cvv = document.getElementById("cvv");
+        // Toggle payment fields based on the selected payment method
+        function togglePaymentFields() {
+            const cardFields = document.getElementById('card-fields');
+            const bkashFields = document.getElementById('bkash-fields');
+            const cashMessage = document.getElementById('cash-message');
 
-            // Check if fields are valid
-            if (cardNumber.checkValidity() && expiryDate.checkValidity() && cvv.checkValidity()) {
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
 
-                alert("Payment Successful!");
+            cardFields.style.display = paymentMethod === 'card' ? 'block' : 'none';
+            bkashFields.style.display = paymentMethod === 'bkash' ? 'block' : 'none';
+            cashMessage.style.display = paymentMethod === 'cash' ? 'block' : 'none';
+        }
 
-                window.location.href = "../index.html";
-            } else {
-                alert("Please fill in all required fields correctly.");
-            }
+        // Update order summary and total cost
+        document.addEventListener("DOMContentLoaded", () => {
+            const totalCostInput = document.getElementById("total-cost");
+            const orderDetailsList = document.getElementById("order-details");
+            const totalSummary = document.getElementById("total-summary");
+
+            // Retrieve the cost from the cookie and calculate total
+            const cost = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)cost\s*\=\s*([^;]*).*$)|^.*$/, "$1")) || 0;
+            const shippingCost = 40.00;
+            const totalCost = cost + shippingCost;
+
+            // Update the order summary and hidden input
+            orderDetailsList.innerHTML = `
+                <li>Subtotal: ৳${cost.toFixed(2)}</li>
+                <li>Shipping Cost: ৳${shippingCost.toFixed(2)}</li>
+            `;
+            totalSummary.textContent = `Total: ৳${totalCost.toFixed(2)}`;
+            totalCostInput.value = totalCost.toFixed(2);
         });
-
-
     </script>
-
+    <script src="../js/payment.js"></script>
 </body>
 
 </html>

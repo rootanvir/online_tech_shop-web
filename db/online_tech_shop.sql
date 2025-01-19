@@ -115,7 +115,29 @@ INSERT INTO `sells` (`sell_id`, `customer_name`, `customer_email`, `products`, `
 --
 -- Indexes for dumped tables
 --
+CREATE TABLE `ordered` (
+  `order_id` varchar(20) NOT NULL,
+  `customer_mobile_number` varchar(20) NOT NULL,
+  `total_cost` double(10,2) NOT NULL,
+  `payment_method` varchar(50) NOT NULL,
+  `order_status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ordered`
+--
+
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ordered`
+--
+ALTER TABLE `ordered`
+  ADD PRIMARY KEY (`order_id`);
 --
 -- Indexes for table `customer`
 --
