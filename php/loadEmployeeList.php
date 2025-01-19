@@ -66,51 +66,61 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management</title>
     <link rel="stylesheet" href="../css/loadEmployeeList.css">
+    <script src="../js/search_table.js" defer></script>
+
 </head>
 
 <body>
     <div class="main-container">
         <div class="container">
-            
+
             <div class="table-container">
-            <h1>Employee Information</h1>
+                <h1>Employee Information</h1>
+
+                <!-- Search Box -->
+                <input type="text" class="searchBox" id="EmployeeSearchBox" onkeyup="employeeSearchTable()" placeholder="Search employees...">
+
                 <?php if ($result->num_rows > 0): ?>
-                    <table>
-                        <tr>
-                            <th>Employee ID</th>
-                            <th>Password</th>
-                            <th>Mobile Number</th>
-                            <th>Email</th>
-                            <th>Name</th>
-                            <th>Gender</th>
-                            <th>Date of Birth</th>
-                            <th>Address</th>
-                            <th>Role</th>
-                            <th>Joining Date</th>
-                            <th>Salary</th>
-                            <th>Action</th>
-                        </tr>
-                        <?php while ($row = $result->fetch_assoc()): ?>
+                    <table id="employeeTable">
+                        <thead>
                             <tr>
-                                <td><?= htmlspecialchars($row['employee_id']) ?></td>
-                                <td style="color:red;">Confidential</td>
-                                <td><?= htmlspecialchars($row['employee_mobile_number']) ?></td>
-                                <td><?= htmlspecialchars($row['employee_email']) ?></td>
-                                <td><?= htmlspecialchars($row['employee_name']) ?></td>
-                                <td><?= htmlspecialchars($row['employee_gender']) ?></td>
-                                <td><?= htmlspecialchars($row['employee_dob']) ?></td>
-                                <td><?= htmlspecialchars($row['employee_address']) ?></td>
-                                <td><?= htmlspecialchars($row['employee_role']) ?></td>
-                                <td><?= htmlspecialchars($row['employee_joining_date']) ?></td>
-                                <td><?= htmlspecialchars($row['employee_salary']) ?></td>
-                                <td>
-                                    <!-- Edit and Delete links -->
-                                    <a href="?edit_id=<?= $row['employee_id'] ?>" title="Edit">✏️</a>
-                                    <a href="?delete_id=<?= $row['employee_id'] ?>" title="Delete"
-                                        onclick="return confirm('Are you sure you want to delete this employee?')">❌</a>
-                                </td>
+                                <th>Employee ID</th>
+                                <th>Password</th>
+                                <th>Mobile Number</th>
+                                <th>Email</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Date of Birth</th>
+                                <th>Address</th>
+                                <th>Role</th>
+                                <th>Joining Date</th>
+                                <th>Salary</th>
+                                <th>Action</th>
                             </tr>
-                        <?php endwhile; ?>
+                        </thead>
+                        <tbody>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($row['employee_id']) ?></td>
+                                    <td style="color:red;">Confidential</td>
+                                    <td><?= htmlspecialchars($row['employee_mobile_number']) ?></td>
+                                    <td><?= htmlspecialchars($row['employee_email']) ?></td>
+                                    <td><?= htmlspecialchars($row['employee_name']) ?></td>
+                                    <td><?= htmlspecialchars($row['employee_gender']) ?></td>
+                                    <td><?= htmlspecialchars($row['employee_dob']) ?></td>
+                                    <td><?= htmlspecialchars($row['employee_address']) ?></td>
+                                    <td><?= htmlspecialchars($row['employee_role']) ?></td>
+                                    <td><?= htmlspecialchars($row['employee_joining_date']) ?></td>
+                                    <td><?= htmlspecialchars($row['employee_salary']) ?></td>
+                                    <td>
+                                        <!-- Edit and Delete links -->
+                                        <a href="?edit_id=<?= $row['employee_id'] ?>" title="Edit">✏️</a>
+                                        <a href="?delete_id=<?= $row['employee_id'] ?>" title="Delete"
+                                            onclick="return confirm('Are you sure you want to delete this employee?')">❌</a>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
                     </table>
                 <?php else: ?>
                     <p>No employee data found.</p>
@@ -137,8 +147,7 @@ $result = $conn->query($sql);
 
                     <label for="employee_mobile_number">Mobile Number</label>
                     <input type="text" id="employee_mobile_number" name="employee_mobile_number"
-                        value="<?= isset($edit_row['employee_mobile_number']) ? $edit_row['employee_mobile_number'] : '' ?>"
-                        required>
+                        value="<?= isset($edit_row['employee_mobile_number']) ? $edit_row['employee_mobile_number'] : '' ?>" required>
 
                     <label for="employee_email">Email</label>
                     <input type="email" id="employee_email" name="employee_email"
@@ -157,8 +166,7 @@ $result = $conn->query($sql);
 
                     <label for="employee_address">Address</label>
                     <input type="text" id="employee_address" name="employee_address"
-                        value="<?= isset($edit_row['employee_address']) ? $edit_row['employee_address'] : '' ?>"
-                        required>
+                        value="<?= isset($edit_row['employee_address']) ? $edit_row['employee_address'] : '' ?>" required>
 
                     <label for="employee_role">Role</label>
                     <select id="employee_role" name="employee_role" required>

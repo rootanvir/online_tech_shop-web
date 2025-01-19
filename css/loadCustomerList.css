@@ -1,0 +1,103 @@
+#customerSearchInput {
+  width: 100%;
+  /* Full width of its container */
+  padding: 12px 20px;
+  /* Add padding for a larger clickable area */
+  margin: 10px 0;
+  /* Add some margin around the input */
+  box-sizing: border-box;
+  /* Ensure padding doesn't affect width calculation */
+  border: 2px solid #ccc;
+  /* Light gray border */
+  border-radius: 8px;
+  /* Rounded corners */
+  font-size: 16px;
+  /* Set font size */
+  transition: border-color 0.3s ease;
+  /* Smooth transition when border color changes */
+}
+
+#customerSearchInput:focus {
+  border-color: #4caf50;
+  /* Change border color on focus */
+  outline: none;
+  /* Remove the default focus outline */
+}
+
+#customerSearchInput::placeholder {
+  color: #888;
+  /* Lighter placeholder text color */
+  font-style: italic;
+  /* Make placeholder text italic */
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Container for the table and search box */
+.container {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #0056b3;
+  color: #fff;
+  font-weight: bold;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+tr td {
+  word-wrap: break-word;
+  max-width: 150px;
+  overflow: hidden;
+}
+
+/* Scrollable table container */
+div {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+/* Style for no data found message */
+p {
+  font-size: 18px;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
