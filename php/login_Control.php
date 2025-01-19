@@ -50,7 +50,9 @@ if ($result->num_rows > 0) {
     } else {
         // If no user found, redirect back to login page with error
         echo "Invalid username or password.";
-        header("Location: signin.html");
+        //header("Location: ../html/signin.html");
+
+        header("Location: ../html/signin.html?error=1");
         exit();
     }
 }

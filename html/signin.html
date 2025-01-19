@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Login Page</title>
     <link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="../css/toast.css">
     
 </head>
 
@@ -27,7 +28,19 @@
             <span>I don't have a Account </span><a href="signup.html">Sign Up</a>
         </div>
     </div>
+    <div id="toast-container"> </div>
+    <script src="../js/toast.js"></script>
     <script src="../js/validation.js"></script>
+    
+    <script>
+        // Check if the error parameter exists in the URL
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                    showToast(`Invalid username or password`, 'error', 4000);
+            }
+        };
+    </script>
 </body>
 
 </html>
