@@ -1,5 +1,13 @@
 [
     {
+        "product_id": "0019",
+        "product_category": "Electronics",
+        "product_name": "Pankha",
+        "product_price": "150.00",
+        "product_quantity": "12",
+        "product_location": "..\/product_img\/p37.jpg"
+    },
+    {
         "product_id": "P001",
         "product_category": "Electronic",
         "product_name": "phone",
