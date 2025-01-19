@@ -1,4 +1,4 @@
- 
+
 
 // validate signup
 document.addEventListener("DOMContentLoaded", () => {
@@ -84,22 +84,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const employeeId = employeeIdInput.value.trim();
     const employeeIdRegex = /^[0-9]+$/; // Numbers only
     if (!employeeIdRegex.test(employeeId)) {
+
       // alert("Employee ID must contain only numbers.");
       isValid = false;
     }
 
-    // Validate password
     const password = passwordInput.value.trim();
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    const passwordRegex = /^.{4,}$/; // Matches any string with 4 or more characters
     if (!passwordRegex.test(password)) {
+
       isValid = false;
     }
+    
+
+
 
     // Validate mobile number
     const mobile = mobileInput.value.trim();
     const mobileRegex = /^[0-9]{11}$/; // 10-digit numeric only
     if (!mobileRegex.test(mobile)) {
+
       isValid = false;
     }
 
@@ -107,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = emailInput.value.trim();
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email format
     if (!emailRegex.test(email)) {
+
       isValid = false;
     }
 
@@ -114,12 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = nameInput.value.trim();
     const nameRegex = /^[a-zA-Z ]+$/; // Letters and spaces only
     if (!nameRegex.test(name)) {
+
       isValid = false;
     }
 
     // Validate address
     const address = addressInput.value.trim();
-    if (address.length > 5) {
+    if (address.length < 4) {
       isValid = false;
     }
 
@@ -127,12 +133,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const salary = salaryInput.value.trim();
     if (isNaN(salary) || salary <= 0) {
       isValid = false;
+
     }
 
     // If any validation fails, prevent form submission
     if (!isValid) {
       event.preventDefault();
-      alert("Invalid information try again");
+      alert("Invalid information try again !");
     } else {
       alert("successfully added");
     }
