@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="../css/payment.css">
+</head>
+
+<body>
+    <div class="payment-container">
+        <h1>Payment</h1>
+        <p>Complete your payment details to proceed.</p>
+
+        <form class="payment-form" id="paymentForm">
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="Enter your card number" required maxlength="16"
+                    pattern="\d{16}" title="Card number must be 16 digits">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date</label>
+                    <input type="date" id="expiry-date" placeholder="MM/YY" required pattern="\d{2}/\d{2}"
+                        title="Enter a valid expiry date in MM/YY format">
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123" required maxlength="3" pattern="\d{3}"
+                        title="CVV must be 3 digits">
+                </div>
+            </div>
+            <button type="submit">Confirm Payment</button>
+        </form>
+
+
+    </div>
+
+    <script>
+        document.getElementById("paymentForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Get all input fields
+            const cardNumber = document.getElementById("card-number");
+            const expiryDate = document.getElementById("expiry-date");
+            const cvv = document.getElementById("cvv");
+
+            // Check if fields are valid
+            if (cardNumber.checkValidity() && expiryDate.checkValidity() && cvv.checkValidity()) {
+
+                alert("Payment Successful!");
+
+                window.location.href = "../index.html";
+            } else {
+                alert("Please fill in all required fields correctly.");
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

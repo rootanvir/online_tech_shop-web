@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="../css/cartView.css">
 </head>
+
 <body>
     <header class="tp" style="position: sticky;">
         <div class="tp-left"> </div>
@@ -53,9 +55,19 @@
                 <button id="apply-coupon">Apply</button>
             </div>
             <p class="sign-in">* Please <a href="signin.html">Sign In</a> to apply coupon</p>
-            <button id="proceed-to-checkout">Proceed to Checkout</button>
+            <!-- Shopping Cart Page -->
+            <button id="proceed-to-checkout" onclick="redirectToPayment()">Proceed to Checkout</button>
+
+            <script>
+                // Redirect to the payment page
+                function redirectToPayment() {
+                    window.location.href = "payment.html"; // Path to your payment page
+                }
+            </script>
+
+
         </div>
-        
+
         <!-- <div id="order-summary">
             <h2>Order Summary</h2>
             <p>Sub Total: $<span id="sub-total">0.00</span></p>
@@ -66,4 +78,5 @@
     </div>
     <script src="../js/viewcart.js"></script>
 </body>
+
 </html>
