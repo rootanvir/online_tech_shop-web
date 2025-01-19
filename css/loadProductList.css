@@ -157,22 +157,22 @@ div[style="display: flex; gap: 3px; align-items: left;"] {
 /* --------------- */
 
 #productSearchInput {
-  width: 100%; /* Full width of its container */
-  padding: 12px 20px; /* Add padding for a larger clickable area */
-  margin: 10px 0; /* Add some margin around the input */
-  box-sizing: border-box; /* Ensure padding doesn't affect width calculation */
-  border: 2px solid #ccc; /* Light gray border */
-  border-radius: 8px; /* Rounded corners */
-  font-size: 16px; /* Set font size */
-  transition: border-color 0.3s ease; /* Smooth transition when border color changes */
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
 }
 
 #productSearchInput:focus {
-  border-color: #4caf50; /* Change border color on focus */
-  outline: none; /* Remove the default focus outline */
+  border-color: #4caf50;
+  outline: none;
 }
 
 #productSearchInput::placeholder {
-  color: #888; /* Lighter placeholder text color */
-  font-style: italic; /* Make placeholder text italic */
+  color: #888;
+  font-style: italic;
 }
