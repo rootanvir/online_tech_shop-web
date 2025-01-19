@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #036666;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+}
+
+/* Go Back Button */
+.go-back-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f4f4f4;
+    color: #5385f1;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.go-back-btn:hover {
+    background-color: #f6589d;
+    color: white;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Order List Section */
+.order-list {
+    max-width: 800px;
+    width: 100%;
+}
+
+.order-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Order Card */
+.order-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.order-card h3 {
+    color: #036666;
+    margin-top: 0;
+}
+
+.order-card p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.order-card button {
+    background-color: #036666;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-card button:hover {
+    background-color: #025252;
+}
