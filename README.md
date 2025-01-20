@@ -65,11 +65,11 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 
 ## Default Credentials for Testing
 
-| User Type|  username |Password |
-|----------|-----------|---------|
-| admin    |  2202     | 0011    |
-| manager  |  2200     | 0011    |
-| customer |           |         |
+| User Type|    username  | Password |
+|----------|--------------|----------|
+| admin    |  1111        | pass     |
+| manager  |  2222        | pass     |
+| customer |  01712345678 | pass     |
 
 
 
