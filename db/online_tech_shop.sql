@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2025 at 01:13 PM
+-- Generation Time: Jan 20, 2025 at 01:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_mobile_number`, `customer_password`, `customer_name`, `customer_email`, `customer_address`, `customer_dob`) VALUES
-('01712345678', 'password', 'TANVIR AHMED', 'tanvir@gmail.com', 'Savar, Dhaka, Bangladesh', '2322-01-01');
+('01712345678', 'pass', 'TANVIR AHMED', 'tanvir@gmail.com', 'Savar, Dhaka, Bangladesh', '2322-01-01');
 
 -- --------------------------------------------------------
 
@@ -68,8 +68,8 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`employee_id`, `employee_password`, `employee_mobile_number`, `employee_email`, `employee_name`, `employee_gender`, `employee_dob`, `employee_address`, `employee_role`, `employee_joining_date`, `employee_salary`) VALUES
-('1111', 'password', '01712345678', 'admin@gamil.com', 'Mr Admin', 'Male', '01/01/1990', 'Bashundara R/A ,Dhaka ,Bangladesh', 'Admin', '01/01/2025', 80000),
-('2222', 'password', '01712345678', 'example@email.com', 'Mr Manager', 'Male', '2015-02-02', 'Kuril,Dhaka', 'Manager', '2024-12-31', 10000);
+('1111', 'pass', '01712345678', 'admin@gamil.com', 'Mr Admin', 'Male', '01/01/1990', 'Bashundara R/A ,Dhaka ,Bangladesh', 'Admin', '01/01/2025', 80000),
+('2222', 'pass', '01712348678', 'example@email.com', 'Mr Manager', 'Male', '2015-02-02', 'Kuril,Dhaka', 'Manager', '2024-12-31', 10000);
 
 -- --------------------------------------------------------
 
