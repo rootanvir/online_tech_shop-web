@@ -64,6 +64,9 @@
             </div>
             <div style="text-align: center;">
                 <h1>Notice</h1>
+                <div id="notice-container">
+                    <!-- Notices will be dynamically loaded here -->
+                </div>
             </div>
         </section>
 
@@ -109,6 +112,38 @@
             }
         });
 
+    </script>
+    <script>
+        // Fetch notices from the server
+        function fetchNotices() {
+            const container = document.getElementById('notice-container');
+            container.innerHTML = '<p>Loading notices...</p>'; // Show loading text
+    
+            fetch('php/fetch_notice.php')
+                .then(response => response.json())
+                .then(data => {
+                    container.innerHTML = ''; // Clear the loading text
+                    if (data.length > 0) {
+                        data.forEach(notice => {
+                            const noticeDiv = document.createElement('div');
+                            noticeDiv.className = 'notice-item';
+                            noticeDiv.innerHTML = `
+                                <p>${notice.notice_content}</p>
+                            `;
+                            container.appendChild(noticeDiv);
+                        });
+                    } else {
+                        container.innerHTML = '<p>No notices found.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching notices:', error);
+                    container.innerHTML = '<p>Failed to load notices.</p>';
+                });
+        }
+    
+        // Load notices on page load
+        document.addEventListener('DOMContentLoaded', fetchNotices);
     </script>
 
 </body>

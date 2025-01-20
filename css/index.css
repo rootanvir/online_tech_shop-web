@@ -273,3 +273,20 @@ main {
 .home-icon:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
+
+.notice-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.notice-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #007bff;
+}
+.notice-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
