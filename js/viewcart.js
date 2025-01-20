@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const shippingCostElement = document.getElementById("shipping-cost");
     const totalAmountElement = document.getElementById("total-amount");
 
-    const SHIPPING_COST = 5.00; // Fixed shipping cost
+    const SHIPPING_COST = 40.00; // Fixed shipping cost
 
     // Fetch product details from JSON
     const fetchProductDetails = async (productId) => {
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Render cart items
+    // Render cart items
     const renderCart = async () => {
         const cart = getCartFromCookie();
         let subTotal = 0;
@@ -48,21 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
             // Render row
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td>
-                    <img src="${productDetails.product_location}" alt="Product Image" width="50">
-                    ${productDetails.product_name}
-                </td>
-                <td>৳${productPrice.toFixed(2)}</td>
-                <td>
-                    <button class="decrement" data-product-id="${productId}">-</button>
-                    <span>${quantity}</span>
-                    <button class="increment" data-product-id="${productId}">+</button>
-                </td>
-                <td>৳${itemTotal.toFixed(2)}</td>
-                <td>
-                    <button class="remove" data-product-id="${productId}">Remove</button>
-                </td>
-            `;
+            <td>
+                <img src="${productDetails.product_location}" alt="Product Image" width="50">
+                ${productDetails.product_name}
+            </td>
+            <td>৳${productPrice.toFixed(2)}</td>
+            <td>
+                <button class="decrement" data-product-id="${productId}">-</button>
+                <span>${quantity}</span>
+                <button class="increment" data-product-id="${productId}">+</button>
+            </td>
+            <td>৳${itemTotal.toFixed(2)}</td>
+            <td>
+                <button class="remove" data-product-id="${productId}">Remove</button>
+            </td>
+        `;
             cartItemsContainer.appendChild(row);
         }
 
@@ -70,7 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
         subTotalElement.textContent = subTotal.toFixed(2);
         shippingCostElement.textContent = subTotal > 0 ? SHIPPING_COST.toFixed(2) : "0.00";
         totalAmountElement.textContent = (subTotal + (subTotal > 0 ? SHIPPING_COST : 0)).toFixed(2);
+
+        // Save subtotal to cookie
+        document.cookie = `cost=${subTotal.toFixed(2)}; path=/; max-age=31536000;`;
     };
+
 
     // Event listeners for cart actions
     cartItemsContainer.addEventListener("click", async (event) => {

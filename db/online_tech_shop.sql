@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2025 at 11:29 AM
+-- Generation Time: Jan 19, 2025 at 07:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -68,6 +68,27 @@ INSERT INTO `employee` (`employee_id`, `employee_password`, `employee_mobile_num
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ordered`
+--
+
+CREATE TABLE `ordered` (
+  `order_id` varchar(20) NOT NULL,
+  `customer_mobile_number` varchar(20) NOT NULL,
+  `total_cost` double(10,2) NOT NULL,
+  `payment_method` varchar(50) NOT NULL,
+  `order_status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ordered`
+--
+
+INSERT INTO `ordered` (`order_id`, `customer_mobile_number`, `total_cost`, `payment_method`, `order_status`) VALUES
+('0001', '8765432109', 639.99, 'bkash', 'order placed');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -80,6 +101,22 @@ CREATE TABLE `product` (
   `product_location` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `product_category`, `product_name`, `product_price`, `product_quantity`, `product_location`) VALUES
+('1', 'Electronics', 'Smartphone', 599.99, 50, 'Aisle 1'),
+('10', 'Food', 'Cereal', 5.50, 200, 'Aisle 9'),
+('2', 'Electronics', 'Laptop', 999.99, 30, 'Aisle 2'),
+('3', 'Home Appliances', 'Microwave', 150.00, 20, 'Aisle 3'),
+('4', 'Furniture', 'Office Chair', 120.00, 10, 'Aisle 4'),
+('5', 'Clothing', 'T-Shirt', 20.00, 100, 'Aisle 5'),
+('6', 'Clothing', 'Jeans', 40.00, 60, 'Aisle 5'),
+('7', 'Sports', 'Basketball', 25.00, 25, 'Aisle 6'),
+('8', 'Books', 'Programming Book', 45.00, 15, 'Aisle 7'),
+('9', 'Toys', 'Lego Set', 35.00, 40, 'Aisle 8');
+
 -- --------------------------------------------------------
 
 --
@@ -88,29 +125,11 @@ CREATE TABLE `product` (
 
 CREATE TABLE `sells` (
   `sell_id` int(15) NOT NULL,
-  `customer_name` varchar(25) NOT NULL,
-  `customer_email` varchar(30) NOT NULL,
-  `products` varchar(70) NOT NULL,
-  `quantity` int(10) NOT NULL,
+  `customer_mobile_number` varchar(25) NOT NULL,
   `price` float NOT NULL,
-  `time` datetime DEFAULT NULL
+  `time` datetime NOT NULL,
+  `payment_method` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sells`
---
-
-INSERT INTO `sells` (`sell_id`, `customer_name`, `customer_email`, `products`, `quantity`, `price`, `time`) VALUES
-(1, 'John Doe', 'john.doe@example.com', 'Laptop', 2, 1200.5, '2025-01-10 10:30:00'),
-(2, 'Jane Smith', 'jane.smith@example.com', 'Smartphone', 1, 899.99, '2025-01-10 12:00:00'),
-(3, 'Alice Johnson', 'alice.johnson@example.com', 'Tablet', 3, 499.99, '2025-01-11 14:45:00'),
-(4, 'Bob Brown', 'bob.brown@example.com', 'Laptop, Mouse', 1, 1350.75, '2025-01-11 16:20:00'),
-(5, 'Eve Davis', 'eve.davis@example.com', 'Headphones', 5, 199.95, '2025-01-12 09:15:00'),
-(6, 'Tom Harris', 'tom.harris@example.com', 'Monitor', 2, 299.99, '2025-01-12 11:00:00'),
-(7, 'Sophia Green', 'sophia.green@example.com', 'Keyboard', 4, 89.99, '2025-01-13 13:30:00'),
-(8, 'Liam Scott', 'liam.scott@example.com', 'Smartphone', 2, 899.99, '2025-01-13 15:45:00'),
-(9, 'Mia White', 'mia.white@example.com', 'Laptop', 1, 1200.5, '2025-01-14 10:00:00'),
-(10, 'Noah Taylor', 'noah.taylor@example.com', 'Tablet', 2, 499.99, '2025-01-14 11:30:00');
 
 --
 -- Indexes for dumped tables
@@ -127,6 +146,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `employee`
   ADD PRIMARY KEY (`employee_id`);
+
+--
+-- Indexes for table `ordered`
+--
+ALTER TABLE `ordered`
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `product`
@@ -148,7 +173,7 @@ ALTER TABLE `sells`
 -- AUTO_INCREMENT for table `sells`
 --
 ALTER TABLE `sells`
-  MODIFY `sell_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `sell_id` int(15) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

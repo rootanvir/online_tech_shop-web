@@ -1,0 +1,178 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  gap: 15px;
+}
+
+.product-list {
+  flex: 2; /* Takes 2/3 of the container */
+  max-height: 700px; /* Set a fixed height for the scroll view */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Container for the table and search box */
+.product-list {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+#productTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #ed9e59;
+  color: #fff;
+  font-weight: bold;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+tr td {
+  word-wrap: break-word;
+  max-width: 150px;
+  overflow: hidden;
+}
+
+/* Style for no data found message */
+p {
+  font-size: 18px;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style for action buttons container */
+div[style="display: flex; gap: 3px; align-items: left;"] {
+  display: flex;
+  gap: 5px;
+}
+
+.form-container {
+  flex: 0.7; /* Reduce the width (takes half of its original space) */
+  max-width: 330px; /* Set a maximum width to limit the size */
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-container form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container form button {
+  display: block;
+  width: 100%;
+  background: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-container form button:hover {
+  background: #45a049;
+}
+
+.action-buttons {
+  white-space: nowrap;
+}
+
+.action-buttons form,
+.action-buttons a {
+  display: inline;
+}
+
+.action-buttons button,
+.action-buttons a {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.action-buttons button {
+  color: red;
+}
+
+.action-buttons a {
+  color: blue;
+  text-decoration: none;
+}
+
+/* --------------- */
+
+#productSearchInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+#productSearchInput:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+#productSearchInput::placeholder {
+  color: #888;
+  font-style: italic;
+}

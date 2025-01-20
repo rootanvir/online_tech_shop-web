@@ -36,7 +36,7 @@
       <div class="form-group">
         <label for="employee_gender">Gender</label>
         <select id="employee_gender" name="employee_gender" required>
-          <option value="">Select</option>
+          <option value="" disabled selected>Select Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>
@@ -52,7 +52,7 @@
       <div class="form-group">
         <label for="employee_role">Role</label>
         <select id="employee_role" name="employee_role" required>
-          <option value="">Select</option>
+          <option value="" disabled selected>Select Role</option>
           <option value="Manager">Manager</option>
           <option value="Administation">Admin</option>
         </select>

@@ -7,43 +7,63 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/toast.css">
-
+    <link rel="icon" type="image/png" href="resource/home.png">
 
 </head>
 
 <body>
     <header class="top">
-        <div class="top-left"> </div>
+        <div class="top-left"> 
+            <div class="home-section">
+                <a class="home-button" href="index.html">
+                    <img src="resource/home.png" alt="Homw" class="home-icon">
+                </a>
+                <h3 style="color: darkslategrey;margin-top: -1px;">Home</h3>
+            </div>
+        </div>
         <div class="top-middle">
             <div class="search-container">
                 <input id="search_bar" type="search" class="search-input" placeholder="Search...">
             </div>
         </div>
         <div class="top-right">
+            <div class="truck-section">
+                <a class="truck-button" href="php/track-order.php">
+                    <img src="resource/truck.png" alt="tracking order" class="truck-icon">
+                </a>
+            </div>
             <div class="cart-section">
                 <a class="cart-button" href="html/cartView.html">
                     <img src="resource/cart.png" alt="Search" class="cart-icon">
                 </a>
             </div>
             <div class="profile-section">
-                <a class="profile-button" href="html/signin.html">
+                <a class="profile-button" href="php/profile-gateway.php">
                     <img src="resource/profile.png" alt="Profile" class="profile-icon">
                 </a>
             </div>
+
+    
         </div>
     </header>
-
+<!-- 
     <nav>
         <a href="#">Home</a>
         <a href="html/adminDash.html">Administration</a>
         <a href="html/managerDash.html">Manager</a>
         <a href="html/signin.html">Sign In</a>
-    </nav>
+    </nav> -->
+
+    <!-- Container to display search results -->
+    <div id="search_results"></div>
 
     <main class="full">
         <section class="left-section">
             <div class="left-option">
                 <button class="btn-left-section" onclick="loadAllProducts()">Show All Products</button>
+            </div>
+            <div style="text-align: center;">
+                <h1>Notice</h1>
             </div>
         </section>
 
@@ -51,17 +71,45 @@
             <!-- Embed the product loader dynamically -->
             <iframe id="productLoader" src="html/loadProduct.html" width="100%" height="1500px"
                 style="border: none;"></iframe>
-                
+
+
         </section>
     </main>
-    <div id="toast-container"> </div>   
+    <div id="toast-container"> </div>
+
+    </section>
+    </main>
+    <div id="toast-container"></div>
+
+    <script src="js/searchProduct.js"></script>
+
     <script>
         function loadAllProducts() {
             const iframe = document.getElementById('productLoader');
             iframe.contentWindow.location.reload();
         }
-    </script>
 
+        // Select the search bar element
+        const searchBar = document.getElementById('search_bar');
+
+        // Add an event listener for the Enter key
+        searchBar.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') { // Check if the Enter key was pressed
+                const query = searchBar.value.trim(); // Get the input value and trim spaces
+                console.log("Enter pressed");
+
+                if (!query) {
+                    alert("Search field cannot be empty!"); // Show an alert if empty
+                    event.preventDefault(); // Prevent the default action (optional for keydown)
+                    return; // Stop further execution
+                }
+
+                // Redirect to the target page
+                window.location.href = 'html/show-search-product.html';
+            }
+        });
+
+    </script>
 
 </body>
 

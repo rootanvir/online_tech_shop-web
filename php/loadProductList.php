@@ -71,53 +71,77 @@ if (isset($_GET['edit_product_id'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List and Form</title>
-    <link rel="stylesheet" href="../css/updateDelete.css">
+    <title>Product List and Update Form</title>
+    <link rel="stylesheet" href="../css/loadProductList.css">
+    <script src="../js/search_table.js" defer></script>
+
+
+
 </head>
+
 <body>
+
     <div class="container">
         <!-- Product List -->
         <div class="product-list">
             <h2>Product List</h2>
-            <?php if ($result->num_rows > 0): ?>
-                <table>
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Category</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Image</th>
-                        <th>Action</th>
-                    </tr>
-                    <?php while ($row = $result->fetch_assoc()): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($row['product_id']) ?></td>
-                            <td><?= htmlspecialchars($row['product_category']) ?></td>
-                            <td><?= htmlspecialchars($row['product_name']) ?></td>
-                            <td><?= htmlspecialchars($row['product_price']) ?></td>
-                            <td><?= htmlspecialchars($row['product_quantity']) ?></td>
-                            <td>
-                                <img src="<?= htmlspecialchars($row['product_location']) ?>" alt="<?= htmlspecialchars($row['product_name']) ?>" style="max-width: 60px;">
-                            </td>
-                            <td>
-                                <!-- Edit Button -->
-                                <form method="GET" action="" style="display: inline;">
-                                    <input type="hidden" name="edit_product_id" value="<?= $row['product_id'] ?>">
-                                    <button type="submit" name="edit_product" style="margin-bottom: 5px;">Edit</button>
-                                </form>
 
-                                <!-- Delete Button -->
-                                <form method="POST" action="" style="display: inline;">
-                                    <input type="hidden" name="product_id" value="<?= $row['product_id'] ?>">
-                                    <button type="submit" name="delete_product" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
-                                </form>
-                            </td>
+            <!-- Search Box -->
+            <input type="text" id="productSearchInput" onkeyup="productSearchTable()" placeholder="Search for products...">
+
+            <?php if ($result->num_rows > 0): ?>
+                <table id="productTable">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Category</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Image</th>
+                            <th>Action</th>
                         </tr>
-                    <?php endwhile; ?>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($row['product_id']) ?></td>
+                                <td><?= htmlspecialchars($row['product_category']) ?></td>
+                                <td><?= htmlspecialchars($row['product_name']) ?></td>
+                                <td><?= htmlspecialchars($row['product_price']) ?></td>
+                                <td><?= htmlspecialchars($row['product_quantity']) ?></td>
+                                <td>
+                                    <img src="<?= htmlspecialchars($row['product_location']) ?>"
+                                        alt="<?= htmlspecialchars($row['product_name']) ?>" style="max-width: 60px;">
+                                </td>
+                                <td>
+                                    <!-- Action Buttons (Edit and Delete) -->
+                                    <div style="display: flex; gap: 3px; align-items: left;">
+                                        <!-- Edit Button -->
+                                        <form method="GET" action="" style="display: inline;">
+                                            <input type="hidden" name="edit_product_id" value="<?= $row['product_id'] ?>">
+                                            <button type="submit" name="edit_product"
+                                                style="font-size: 18px; color: #ff9800; border: none; background: none; cursor: pointer;"
+                                                title="Edit">✏️</button>
+                                        </form>
+
+                                        <!-- Delete Button -->
+                                        <form method="POST" action="" style="display: inline;">
+                                            <input type="hidden" name="product_id" value="<?= $row['product_id'] ?>">
+                                            <button type="submit" name="delete_product"
+                                                onclick="return confirm('Are you sure you want to delete this product?')"
+                                                style="font-size: 18px; color: #f44336; border: none; background: none; cursor: pointer;"
+                                                title="Delete">❌</button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
                 </table>
             <?php else: ?>
                 <p>No product data found.</p>
@@ -129,30 +153,34 @@ if (isset($_GET['edit_product_id'])) {
             <h2>Update Product</h2>
             <form method="POST" action="">
                 <label for="product_id">Product ID</label>
-                <input type="text" id="product_id" name="product_id" 
-                       value="<?= $editProductData ? htmlspecialchars($editProductData['product_id']) : '' ?>" required readonly>
+                <input type="text" id="product_id" name="product_id"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_id']) : '' ?>" required
+                    readonly>
 
                 <label for="product_category">Category</label>
-                <input type="text" id="product_category" name="product_category" 
-                       value="<?= $editProductData ? htmlspecialchars($editProductData['product_category']) : '' ?>" required>
+                <input type="text" id="product_category" name="product_category"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_category']) : '' ?>" required>
 
                 <label for="product_name">Name</label>
-                <input type="text" id="product_name" name="product_name" 
-                       value="<?= $editProductData ? htmlspecialchars($editProductData['product_name']) : '' ?>" required>
+                <input type="text" id="product_name" name="product_name"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_name']) : '' ?>" required>
 
                 <label for="product_price">Price</label>
-                <input type="number" id="product_price" name="product_price" 
-                       value="<?= $editProductData ? htmlspecialchars($editProductData['product_price']) : '' ?>" step="0.01" required>
+                <input type="number" id="product_price" name="product_price"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_price']) : '' ?>" step="0.01"
+                    required>
 
                 <label for="product_quantity">Quantity</label>
-                <input type="number" id="product_quantity" name="product_quantity" 
-                       value="<?= $editProductData ? htmlspecialchars($editProductData['product_quantity']) : '' ?>" required>
+                <input type="number" id="product_quantity" name="product_quantity"
+                    value="<?= $editProductData ? htmlspecialchars($editProductData['product_quantity']) : '' ?>" required>
 
                 <button type="submit" name="update_product">Update Product</button>
             </form>
         </div>
     </div>
+
 </body>
+
 </html>
 
 <?php $conn->close(); ?>

@@ -155,6 +155,8 @@ main {
     height: 30px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    padding-right: 20px;
+    margin-top: 5px;
 }
 
 .cart-icon:hover {
@@ -224,4 +226,50 @@ main {
 .profile-icon:hover {
     transform: scale(1.2); /* Slight zoom effect */
     filter: brightness(1.2); /* Brightens the icon */
+}
+
+
+/*-------------for truck---------------------*/
+/* Truck Section */
+.truck-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px; /* Adjust spacing as needed */
+}
+
+/* Truck Icon Button */
+.truck-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.truck-icon {
+    width: 40px; /* Icon size */
+    height: 40px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    padding-right: 20px;
+}
+
+.truck-icon:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+    filter: brightness(1.2); /* Brighten the icon */
+}
+.home-icon {
+    margin-top: 30px;
+    width: 100px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds a shadow under the icon */
+    border-radius: 50%; /* Optional: makes the icon rounded */
+    transition: transform 0.3s ease; /* Smooth animation on hover */
+}
+
+.home-icon:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }

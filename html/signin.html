@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Login Page</title>
     <link rel="stylesheet" href="../css/signin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="../css/toast.css">  
+    <link rel="icon" type="image/png" href="../resource/home.png">
+  
 </head>
 
 <body>
+
+    <a href="../index.html" class="continue-shopping-btn">Continue Shopping</a>
+
     <div class="login-container">
         <h1>Login</h1>
         <form action="../php/login_Control.php" method="POST">
@@ -28,8 +32,19 @@
             <span>I don't have a Account </span><a href="signup.html">Sign Up</a>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <div id="toast-container"> </div>
+    <script src="../js/toast.js"></script>
     <script src="../js/validation.js"></script>
+    
+    <script>
+        // Check if the error parameter exists in the URL
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                    showToast(`Invalid username or password`, 'error', 4000);
+            }
+        };
+    </script>
 </body>
 
 </html>

@@ -1,26 +1,30 @@
 <?php
-// Include the database connection
-include('db_connection.php');
+// Database configuration
+include 'db_connection.php';
 
-// Fetch sales data for the table
-$sql_table = "SELECT sell_id, customer_name, customer_email, products, quantity, price, time FROM sells";
-$result_table = mysqli_query($conn, $sql_table);
+// Fetch data from the `sells` table
+$sql = "SELECT sell_id, customer_mobile_number, price, DATE_FORMAT(time, '%Y-%m') as month, payment_method FROM sells";
+$result = $conn->query($sql);
 
-// Fetch sales data for the chart
-$sql_chart = "SELECT products, SUM(quantity) AS total_quantity FROM sells GROUP BY products";
-$result_chart = mysqli_query($conn, $sql_chart);
+$sells_data = [];
+$monthly_sales = [];
 
-$products = [];
-$quantities = [];
+// Process database results
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $sells_data[] = $row;
 
-// Process data for the chart
-while ($row = mysqli_fetch_assoc($result_chart)) {
-    $products[] = $row['products'];
-    $quantities[] = $row['total_quantity'];
+        // Summarize total sales by month
+        $month = $row['month'];
+        $price = $row['price'];
+        if (!isset($monthly_sales[$month])) {
+            $monthly_sales[$month] = 0;
+        }
+        $monthly_sales[$month] += $price;
+    }
 }
 
-// Close the database connection
-mysqli_close($conn);
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -29,92 +33,57 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales Data and Statistics</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .table-container {
-            max-height: 250px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-        }
-
-        canvas {
-            margin: 20px 0;
-        }
-    </style>
+    <title>Sells Data</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/sell_info.css">
     <script>
         // Pass PHP data to JavaScript
-        const products = <?php echo json_encode($products); ?>;
-        const quantities = <?php echo json_encode($quantities); ?>;
+        const chartData = {
+            months: <?= json_encode(array_keys($monthly_sales)) ?>,
+            totals: <?= json_encode(array_values($monthly_sales)) ?>
+        };
+
+        // Log to check the data
+        console.log(chartData); // Check if the data is passed correctly
     </script>
     <script src="../js/sell_statistic.js" defer></script>
 </head>
 
 <body>
-    <h1>Sales Information</h1>
+    <div class="container">
+        <h1>Sells Data</h1>
+        <!-- Search Box -->
+        <input type="text" id="sellsSearchInput" onkeyup="sellsSearchTable()" placeholder="Search for products...">
+        <div class="table-container">
 
-    <!-- Scrollable Sales Table -->
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Sell ID</th>
-                    <th>Customer Name</th>
-                    <th>Customer Email</th>
-                    <th>Products</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                // Check if any rows were returned
-                if (mysqli_num_rows($result_table) > 0) {
-                    // Fetch each row and display it
-                    while ($row = mysqli_fetch_assoc($result_table)) {
-                        echo "<tr>
-                            <td>{$row['sell_id']}</td>
-                            <td>{$row['customer_name']}</td>
-                            <td>{$row['customer_email']}</td>
-                            <td>{$row['products']}</td>
-                            <td>{$row['quantity']}</td>
-                            <td>{$row['price']}</td>
-                            <td>{$row['time']}</td>
-                        </tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='7'>No sales data found</td></tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+            <!-- Table to display sells data -->
+            <table id="sells_table" border="1">
+                <thead>
+                    <tr>
+                        <th>Sell ID</th>
+                        <th>Customer Mobile</th>
+                        <th>Price</th>
+                        <th>Time</th>
+                        <th>Payment Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($sells_data as $sell): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($sell['sell_id']) ?></td>
+                            <td><?= htmlspecialchars($sell['customer_mobile_number']) ?></td>
+                            <td><?= htmlspecialchars($sell['price']) ?></td>
+                            <td><?= htmlspecialchars($sell['month']) ?></td>
+                            <td><?= htmlspecialchars($sell['payment_method']) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <script src="../js/search_table.js" defer></script>
+        <h2>Monthly Sales Chart</h2>
+        <canvas id="sales_chart"></canvas>
     </div>
-
-    <!-- Sales Statistics Chart -->
-    <h1>Sales Statistics</h1>
-    <canvas id="salesChart" width="800" height="300"></canvas>
 </body>
 
 </html>

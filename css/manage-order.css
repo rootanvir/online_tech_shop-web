@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #036666;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Go Back Button */
+.go-back-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f4f4f4;
+    color: #036666;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.go-back-btn:hover {
+    background-color: #036666;
+    color: white;
+}
+
+/* Admin Panel */
+.admin-panel {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-panel h2 {
+    margin-bottom: 20px;
+}
+
+/* Search Form */
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    background-color: #036666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #025252;
+}
+
+/* Order Table */
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-table th, .order-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.order-table th {
+    background-color: #036666;
+    color: white;
+}
+
+.order-table td button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-table td button:hover {
+    background-color: #cc0000;
+}
+
+.order-table select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

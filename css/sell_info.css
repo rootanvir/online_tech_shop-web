@@ -1,0 +1,102 @@
+General body styles body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Scrollable table container */
+.table-container {
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading style */
+.table-container h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #ff7700;
+  color: #fff;
+  font-weight: bold;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* No data message */
+td[colspan="7"] {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+}
+
+/* Table cell wrap */
+td {
+  word-wrap: break-word;
+  max-width: 150px;
+  overflow: hidden;
+}
+
+/* Style for price column */
+td:nth-child(6) {
+  color: green;
+  font-weight: bold;
+}
+
+canvas {
+  margin: 20px 0;
+}
+
+#sellsSearchInput {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+#sellsSearchInput:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+#sellsSearchInput::placeholder {
+  color: #888;
+  font-style: italic;
+}
