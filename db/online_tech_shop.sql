@@ -131,6 +131,24 @@ CREATE TABLE `sells` (
   `payment_method` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+
+CREATE TABLE `notice` (
+  `notice_id` varchar(20) NOT NULL,
+  `notice_content` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `notice`
+--
+
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `notice`
+--
+
 --
 -- Indexes for dumped tables
 --
@@ -168,6 +186,9 @@ ALTER TABLE `sells`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+ALTER TABLE `notice`
+  ADD PRIMARY KEY (`notice_id`);
+
 
 --
 -- AUTO_INCREMENT for table `sells`
