@@ -43,8 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Validate password
     const password = passwordInput.value.trim();
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    const passwordRegex = /^.{4,}$/;
     if (!passwordRegex.test(password)) {
       isValid = false;
     }
