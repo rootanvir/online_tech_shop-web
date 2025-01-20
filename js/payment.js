@@ -11,12 +11,11 @@ function togglePaymentFields() {
     cashMessage.style.display = paymentMethod === 'cash' ? 'block' : 'none';
 }
 
-// Validate payment form before submission
 function validatePaymentForm(event) {
     const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
     if (!paymentMethod) {
         alert('Please select a payment method.');
-        event.preventDefault();  // Prevent form submission if no payment method is selected
+        event.preventDefault();  
         return false;
     }
 
@@ -27,11 +26,10 @@ function validatePaymentForm(event) {
 
         if (!cardNumber || !expiryDate || !cvv) {
             alert('Please fill in all the card payment fields.');
-            event.preventDefault();  // Prevent form submission if card fields are incomplete
+            event.preventDefault();  
             return false;
         }
 
-        // Further validation for card fields (e.g., CVV, expiry date, etc.) can be added here
     }
 
     if (paymentMethod.value === 'bkash') {
@@ -40,18 +38,15 @@ function validatePaymentForm(event) {
 
         if (!bkashNumber || !transactionId) {
             alert('Please fill in all the Bkash payment fields.');
-            event.preventDefault();  // Prevent form submission if Bkash fields are incomplete
+            event.preventDefault();  
             return false;
         }
 
-        // Further validation for Bkash fields can be added here
     }
 
-    // If everything is valid, allow form submission
     return true;
 }
 
-// Add event listener to form submission
 document.getElementById('paymentForm').addEventListener('submit', validatePaymentForm);
 
 // Update order summary and total cost

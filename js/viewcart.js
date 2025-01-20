@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const SHIPPING_COST = 40.00; // Fixed shipping cost
 
-    // Fetch product details from JSON
     const fetchProductDetails = async (productId) => {
         try {
             const response = await fetch("../json/products.json");
@@ -24,13 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return cartCookie ? JSON.parse(decodeURIComponent(cartCookie[1])) : [];
     };
 
-    // Save cart back to cookies
     const saveCartToCookie = (cart) => {
         document.cookie = `cart=${encodeURIComponent(JSON.stringify(cart))}; path=/; max-age=31536000`;
     };
 
-    // Render cart items
-    // Render cart items
+    
     const renderCart = async () => {
         const cart = getCartFromCookie();
         let subTotal = 0;
@@ -77,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    // Event listeners for cart actions
     cartItemsContainer.addEventListener("click", async (event) => {
         const target = event.target;
         const productId = target.getAttribute("data-product-id");

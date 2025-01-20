@@ -21,10 +21,8 @@ echo "<h1>Customer Information</h1>";
 <input type="text" id="customerSearchInput" onkeyup="customerSearchTable()" placeholder="Search for customers...">
 
 <?php
-// Display customer data in a table
 if ($result->num_rows > 0) {
 
-    // Add a scrollable container for the table
     echo "<div>";
 
     // Start table and apply some inline styles
@@ -37,7 +35,6 @@ if ($result->num_rows > 0) {
                 <th>Date of Birth</th>
             </tr>";
 
-    // Loop through and display each row of data
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
                 <td>{$row['customer_mobile_number']}</td>
@@ -59,8 +56,6 @@ $conn->close();
 ?>
 
 
-<!-- link to the external JavaScript file -->
 <script src="../js/search_table.js"></script>
 
-<!-- link to the external css file -->
 <link rel="stylesheet" href="../css/loadCustomerList.css">

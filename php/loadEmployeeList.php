@@ -1,16 +1,12 @@
 <?php
-// Database configuration
 include 'db_connection.php';
 
-// Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle form submission for updating employee data
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_employee'])) {
     $employee_id = $_POST['employee_id'];
     $employee_mobile_number = $_POST['employee_mobile_number'];

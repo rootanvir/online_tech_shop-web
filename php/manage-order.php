@@ -2,15 +2,12 @@
 session_start();
 include 'db_connection.php'; // Include your database connection file
 
-// Check if admin is logged in
 
 $searchQuery = '';
 if (isset($_POST['search'])) {
-    // If search form is submitted, get search term and filter orders
     $searchQuery = $_POST['search_term'];
     $query = "SELECT * FROM ordered WHERE order_id LIKE '%$searchQuery%' OR customer_mobile_number LIKE '%$searchQuery%' ORDER BY order_id DESC";
 } else {
-    // If no search term, show all orders
     $query = "SELECT * FROM ordered ORDER BY order_id DESC";
 }
 
@@ -23,27 +20,22 @@ if (isset($_POST['update_status'])) {
 
     $updateQuery = "UPDATE ordered SET order_status = '$status' WHERE order_id = '$order_id'";
     if ($conn->query($updateQuery) === TRUE) {
-        // Success: Show Toast Notification and refresh the page
         echo "<script>showToast('Order status updated successfully!', 'success', 2000);</script>";
         echo "<script>window.location.href = 'manage-order.php';</script>";
     } else {
-        // Error: Show Toast Notification and refresh the page
         echo "<script>showToast('Error updating order status: " . $conn->error . "', 'error', 2000);</script>";
         echo "<script>window.location.href = 'manage-order.php';</script>";
     }
 }
 
-// Handle order deletion
 if (isset($_POST['delete_order'])) {
     $order_id = $_POST['order_id'];
 
     $deleteQuery = "DELETE FROM ordered WHERE order_id = '$order_id'";
     if ($conn->query($deleteQuery) === TRUE) {
-        // Success: Show Toast Notification and refresh the page
         echo "<script>showToast('Order deleted successfully!', 'success', 2000);</script>";
         echo "<script>window.location.href = 'manage-order.php';</script>";
     } else {
-        // Error: Show Toast Notification and refresh the page
         echo "<script>showToast('Error deleting order: " . $conn->error . "', 'error', 2000);</script>";
         echo "<script>window.location.href = 'manage-order.php';</script>";
     }

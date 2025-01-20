@@ -42,37 +42,29 @@ async function loadProducts() {
 }
 
 function addToCart(productId, productName) {
-    // Retrieve the cart cookie or initialize it as an empty array
     let cart = getCookie("cart");
 
-    // If no cart cookie exists, initialize as an empty array
     if (!cart) {
-        cart = "[]"; // Default to empty cart in string format
+        cart = "[]"; 
     }
 
-    // Try to parse the cart cookie into a JavaScript object
     try {
-        cart = JSON.parse(cart); // Parsing the raw JSON
+        cart = JSON.parse(cart); 
     } catch (e) {
         console.error("Error parsing cart cookie:", e);
-        cart = []; // In case of error, initialize with an empty array
+        cart = []; 
     }
 
-    // Check if the product is already in the cart
     const existingProduct = cart.find(item => item.productId === productId);
 
     if (existingProduct) {
-        // If the product exists, increase its quantity
         existingProduct.quantity += 1;
     } else {
-        // Otherwise, add the new product with a quantity of 1
         cart.push({ productId, quantity: 1 });
     }
 
-    // Show a success toast with the product name
     showToast(`${productName} added to cart`, "success", 2000);
 
-    // Save the updated cart back to the cookie in raw JSON format (no encoding)
     setCookie("cart", JSON.stringify(cart), 7); // Save for 7 days
     console.log("Cart updated:", cart);
 }

@@ -1,9 +1,8 @@
 <?php
 session_start();
-include 'db_connection.php'; // Include your database connection file
+include 'db_connection.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Fetch form and session data
     if (!isset($_SESSION['username'])) {
         header('Location: ../html/signin.html');
         exit();

@@ -1,13 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Extract chart data from the global variable
   const { months, totals } = chartData;
 
-  // Check if data exists before initializing the chart
   if (months && totals) {
-    // Get the chart context
     const ctx = document.getElementById("sales_chart").getContext("2d");
 
-    // Initialize the chart
     new Chart(ctx, {
       type: "line",
       data: {

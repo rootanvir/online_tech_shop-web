@@ -1,7 +1,6 @@
-let currentPage = 1; // Initialize current page to 1
-let totalPages = 1; // To be determined once the server responds
+let currentPage = 1; 
+let totalPages = 1;
 
-// Function to load products based on current page
 async function loadProducts(page = 1) {
   try {
     const response = await fetch(`../php/loadProduct.php?page=${page}`);
@@ -11,10 +10,10 @@ async function loadProducts(page = 1) {
 
     const data = await response.json();
     const products = data.products;
-    totalPages = data.totalPages; // Update total pages from the response
+    totalPages = data.totalPages; 
 
     const gridContainer = document.getElementById("productGrid");
-    gridContainer.innerHTML = ""; // Clear existing content
+    gridContainer.innerHTML = ""; 
 
     if (products.length === 0) {
       gridContainer.innerHTML = "<p>No products available.</p>";
@@ -37,14 +36,11 @@ async function loadProducts(page = 1) {
         gridContainer.appendChild(productCard);
       });
 
-      // Attach add-to-cart functionality to new buttons
       attachAddToCartHandlers();
     }
 
-    // Scroll to the top of the page (optional)
     window.scrollTo(0, 0);
 
-    // Update pagination buttons and currentPage
     checkPagination();
   } catch (error) {
     console.error("Error loading products:", error);
@@ -64,7 +60,6 @@ function attachAddToCartHandlers() {
       const productName = button.getAttribute("data-product-name"); // Get product name
       const quantity = 1; // Default quantity is 1
 
-      // Call functions from add2cart.js
       addToCartAlert(productName); // Show alert
       saveToCookie(productId, quantity); // Save product to cookie
       sendToServer(productId, quantity); // Send product info to server
@@ -72,7 +67,6 @@ function attachAddToCartHandlers() {
   });
 }
 
-// Function to check pagination button states (Previous and Next)
 function checkPagination() {
   document.getElementById("prevPage").disabled = currentPage === 1;
   document.getElementById("nextPage").disabled = currentPage === totalPages;
@@ -84,7 +78,6 @@ function disablePaginationButtons() {
   document.getElementById("nextPage").disabled = true;
 }
 
-// Event listener for Previous page button
 document.getElementById("prevPage").addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
@@ -92,7 +85,6 @@ document.getElementById("prevPage").addEventListener("click", () => {
   }
 });
 
-// Event listener for Next page button
 document.getElementById("nextPage").addEventListener("click", () => {
   if (currentPage < totalPages) {
     currentPage++;
@@ -100,5 +92,4 @@ document.getElementById("nextPage").addEventListener("click", () => {
   }
 });
 
-// Load the first page when the page is ready
 window.onload = () => loadProducts(currentPage);

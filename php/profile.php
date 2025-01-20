@@ -14,27 +14,20 @@
 
         <?php
             session_start();
-            // Check if the user is logged in (session exists)
             if (isset($_SESSION['username'])) {
-                // Retrieve the session username
-                $sessionUsername = $_SESSION['username']; // Rename session variable for clarity
+                $sessionUsername = $_SESSION['username']; 
 
-                // Database configuration
                 include 'db_connection.php';
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                // Check connection
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                // Search for the user in the 'customer' table using the session username
                 $query = "SELECT * FROM customer WHERE customer_mobile_number = '$sessionUsername'";
                 $result = $conn->query($query);
 
-                // If user is not found in the 'customer' table, search in the 'employee' table
                 if ($result->num_rows > 0) {
-                    // User found in customer table, display the details
                     while ($row = $result->fetch_assoc()) {
                         echo "<h2>Customer Details:</h2>";
                         echo "<div class='info-box'>";
@@ -53,12 +46,10 @@
                         
                     }
                 } else {
-                    // If not found in 'customer', search in 'employee'
                     $query = "SELECT * FROM employee WHERE employee_id = '$sessionUsername'";
                     $result = $conn->query($query);
                     
                     if ($result->num_rows > 0) {
-                        // User found in employee table, display the details
                         while ($row = $result->fetch_assoc()) {
                             echo "<h2>Employee Details:</h2>";
                             echo "<div class='info-box'>";
@@ -74,7 +65,6 @@
                             echo "</div>";
                         }
                     } else {
-                        // If no user found in either table
                         echo "<p class='error-message'>User not found in database.</p>";
                     }
                 }
@@ -83,7 +73,6 @@
                 $conn->close();
 
             } else {
-                // If the user is not logged in, show a message
                 echo "<p class='error-message'>You are not logged in.</p>";
             }
         ?>

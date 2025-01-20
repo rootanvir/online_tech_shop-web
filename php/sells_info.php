@@ -1,20 +1,16 @@
 <?php
-// Database configuration
 include 'db_connection.php';
 
-// Fetch data from the `sells` table
 $sql = "SELECT sell_id, customer_mobile_number, price, DATE_FORMAT(time, '%Y-%m') as month, payment_method FROM sells";
 $result = $conn->query($sql);
 
 $sells_data = [];
 $monthly_sales = [];
 
-// Process database results
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $sells_data[] = $row;
 
-        // Summarize total sales by month
         $month = $row['month'];
         $price = $row['price'];
         if (!isset($monthly_sales[$month])) {
@@ -56,7 +52,6 @@ $conn->close();
         <input type="text" id="sellsSearchInput" onkeyup="sellsSearchTable()" placeholder="Search for products...">
         <div class="table-container">
 
-            <!-- Table to display sells data -->
             <table id="sells_table" border="1">
                 <thead>
                     <tr>

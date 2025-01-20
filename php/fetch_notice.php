@@ -11,7 +11,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $notices[] = $row;
     }
-    echo json_encode($notices); // Return the notices as JSON
+    echo json_encode($notices); 
 } else {
     echo json_encode([]);
 }

@@ -7,7 +7,6 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $lastId = $row['product_id'];
 
-    // Increment the ID and format it
     $newId = str_pad((int) $lastId + 1, 4, "0", STR_PAD_LEFT);
 } else {
     // Start with 0001 if no ID found

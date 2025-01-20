@@ -1,5 +1,4 @@
 <?php
-// Database configuration
 include 'db_connection.php';
 
 // Create a connection

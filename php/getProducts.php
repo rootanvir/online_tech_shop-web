@@ -20,12 +20,10 @@ if ($result->num_rows > 0) {
 
     $jsonPath = '../json/products.json';
     if (file_put_contents($jsonPath, json_encode($products, JSON_PRETTY_PRINT))) {
-        // Silent success: Do not output anything
     } else {
         error_log("Error: Failed to write JSON file.");
     }
 } else {
-    // If no products exist, create an empty JSON file
     file_put_contents('../json/products.json', json_encode([]));
 }
 

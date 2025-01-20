@@ -1,4 +1,3 @@
-// Function to implement Employee table search
 
 function employeeSearchTable() {
   var input, filter, table, tr, td, i, j, txtValue;
@@ -60,12 +59,10 @@ function customerSearchTable() {
   var table = document.getElementById("customerTable");
   var rows = table.getElementsByTagName("tr");
 
-  // Loop through all table rows, starting from the second row (to skip the table header)
   for (var i = 1; i < rows.length; i++) {
     var cells = rows[i].getElementsByTagName("td");
     var found = false;
 
-    // Loop through all columns in the row
     for (var j = 0; j < cells.length; j++) {
       var cell = cells[j];
       if (cell) {
@@ -77,7 +74,6 @@ function customerSearchTable() {
       }
     }
 
-    // Show the row if a match was found, otherwise hide it
     if (found) {
       rows[i].style.display = "";
     } else {
@@ -99,7 +95,6 @@ function sellsSearchTable() {
     let td = tr[i].getElementsByTagName("td");
     let found = false;
 
-    // Loop through each cell in the row to find if any text matches the search query
     for (let j = 0; j < td.length; j++) {
       if (td[j]) {
         let cellText = td[j].textContent || td[j].innerText;

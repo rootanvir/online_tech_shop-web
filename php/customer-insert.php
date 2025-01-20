@@ -5,7 +5,6 @@ include 'db_connection.php';
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -18,7 +17,6 @@ $address = $_POST['address'];
 $dob = $_POST['dob'];
 $password = $_POST['password'];
 
-// Insert data into the customer table
 $sql = "INSERT INTO customer (customer_mobile_number, customer_password, customer_name, customer_email, customer_address, customer_dob) 
         VALUES ('$mobile', '$password', '$name', '$email', '$address', '$dob')";
 

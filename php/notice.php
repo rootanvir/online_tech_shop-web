@@ -5,16 +5,13 @@ include 'db_connection.php';
 // Connect to the database
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// Check the connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Handle form submissions
-$message = ""; // Initialize message
+$message = ""; 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['add'])) {
-        // Add notice
         $notice_id = $_POST['notice_id'];
         $notice_content = $_POST['notice_content'];
 
@@ -29,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $notice_id = $_POST['notice_id'];
         $notice_content = $_POST['notice_content'];
 
-        // Check if the notice ID exists
         $check_sql = "SELECT * FROM notice WHERE notice_id = '$notice_id'";
         $check_result = mysqli_query($conn, $check_sql);
 
@@ -76,12 +72,10 @@ if ($result) {
     <script>
         function confirmDelete(noticeId) {
             if (confirm("Are you sure you want to delete this notice?")) {
-                // Create a form to send the delete request
                 var form = document.createElement('form');
                 form.method = 'POST';
                 form.action = ''; // Current page
 
-                // Create hidden input to send notice ID
                 var input = document.createElement('input');
                 input.type = 'hidden';
                 input.name = 'notice_id';

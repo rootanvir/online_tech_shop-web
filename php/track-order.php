@@ -1,15 +1,14 @@
 <?php
 session_start();
-include 'db_connection.php'; // Include your database connection file
+include 'db_connection.php'; 
 
 if (!isset($_SESSION['username'])) {
-    header('Location: ../html/signin.html'); // Redirect if user is not logged in
+    header('Location: ../html/signin.html'); 
     exit();
 }
 
-$username = $_SESSION['username']; // Fetch username from session
+$username = $_SESSION['username']; 
 
-// Query to get all orders for the logged-in user
 $query = "SELECT * FROM ordered WHERE customer_mobile_number = '$username' ORDER BY order_id DESC";
 $result = $conn->query($query);
 ?>
