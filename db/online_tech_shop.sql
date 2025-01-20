@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2025 at 07:06 PM
+-- Generation Time: Jan 20, 2025 at 01:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,6 +36,13 @@ CREATE TABLE `customer` (
   `customer_dob` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customer_mobile_number`, `customer_password`, `customer_name`, `customer_email`, `customer_address`, `customer_dob`) VALUES
+('01712345678', 'password', 'TANVIR AHMED', 'tanvir@gmail.com', 'Savar, Dhaka, Bangladesh', '2322-01-01');
+
 -- --------------------------------------------------------
 
 --
@@ -61,9 +68,26 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`employee_id`, `employee_password`, `employee_mobile_number`, `employee_email`, `employee_name`, `employee_gender`, `employee_dob`, `employee_address`, `employee_role`, `employee_joining_date`, `employee_salary`) VALUES
-('11111', 'password', '01712345678', 'admin@gamil.com', 'Mr Admin', 'Male', '01/01/1990', 'Bashundara R/A ,Dhaka ,Bangladesh', 'CEO', '01/01/2025', 80000),
-('2200', '0011', '012', 'dw@gmail.com', 'ds', 'Male', '12/12/2014', 'Dhaka', 'Manager', '01/01/2025', 500),
-('2202', '0011', '012', 'dw@gmail.com', 'ds', 'Male', '12/12/2014', 'Dhaka', 'Admin', '01/01/2025', 500);
+('1111', 'password', '01712345678', 'admin@gamil.com', 'Mr Admin', 'Male', '01/01/1990', 'Bashundara R/A ,Dhaka ,Bangladesh', 'Admin', '01/01/2025', 80000),
+('2222', 'password', '01712345678', 'example@email.com', 'Mr Manager', 'Male', '2015-02-02', 'Kuril,Dhaka', 'Manager', '2024-12-31', 10000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notice`
+--
+
+CREATE TABLE `notice` (
+  `notice_id` varchar(20) NOT NULL,
+  `notice_content` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `notice`
+--
+
+INSERT INTO `notice` (`notice_id`, `notice_content`) VALUES
+('1212', 'this is a notice\r\n');
 
 -- --------------------------------------------------------
 
@@ -84,7 +108,8 @@ CREATE TABLE `ordered` (
 --
 
 INSERT INTO `ordered` (`order_id`, `customer_mobile_number`, `total_cost`, `payment_method`, `order_status`) VALUES
-('0001', '8765432109', 639.99, 'bkash', 'order placed');
+('0002', '01788899814', 256.00, 'bkash', 'pending'),
+('0003', '01788899814', 340.00, 'cash', 'pending');
 
 -- --------------------------------------------------------
 
@@ -106,16 +131,20 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_category`, `product_name`, `product_price`, `product_quantity`, `product_location`) VALUES
-('1', 'Electronics', 'Smartphone', 599.99, 50, 'Aisle 1'),
-('10', 'Food', 'Cereal', 5.50, 200, 'Aisle 9'),
-('2', 'Electronics', 'Laptop', 999.99, 30, 'Aisle 2'),
-('3', 'Home Appliances', 'Microwave', 150.00, 20, 'Aisle 3'),
-('4', 'Furniture', 'Office Chair', 120.00, 10, 'Aisle 4'),
-('5', 'Clothing', 'T-Shirt', 20.00, 100, 'Aisle 5'),
-('6', 'Clothing', 'Jeans', 40.00, 60, 'Aisle 5'),
-('7', 'Sports', 'Basketball', 25.00, 25, 'Aisle 6'),
-('8', 'Books', 'Programming Book', 45.00, 15, 'Aisle 7'),
-('9', 'Toys', 'Lego Set', 35.00, 40, 'Aisle 8');
+('0001', 'Arduino ', 'Arduino Pro Micro', 500.00, 3, '../product_img/p38.png'),
+('00010', 'Arduino ', 'Heat Sink Set', 50.00, 4, '../product_img/p50.png'),
+('0002', 'Arduino ', 'GPS Module GY-GPSV3 NEO-8M with Ceramic Active Antenna', 450.00, 5, '../product_img/p39.png'),
+('0003', 'Arduino ', 'TDS Sensor', 300.00, 4, '../product_img/p41.png'),
+('0004', 'Arduino ', 'Bluetooth module', 300.00, 4, '../product_img/p42.png'),
+('0005', 'Arduino ', 'DHT11 Temperature and Humidity Sensor', 250.00, 3, '../product_img/p43.png'),
+('0006', 'Arduino ', 'GY-906 Infrared Temperature Sensor', 1300.00, 4, '../product_img/p45.png'),
+('0007', 'Arduino ', 'Speed Detecting Sensor', 200.00, 3, '../product_img/p46.png'),
+('0008', 'Arduino ', 'RF Transmitter Receiver Pair', 150.00, 3, '../product_img/p47.png'),
+('0009', 'Arduino ', 'HC-SR04 Ultrasonic Sensor', 100.00, 4, '../product_img/p49.png'),
+('0011', 'Arduino ', 'Raspberry Pi 4 Model B 4GB', 12960.00, 4, '../product_img/p51.png'),
+('0012', 'Arduino ', 'Night Vision Camera for Raspberry Pi', 2930.00, 4, '../product_img/p52.jpeg'),
+('0013', 'Arduino ', 'Acrylic Case for Raspberry Pi 4 Model B', 270.00, 4, '../product_img/p53.jpeg'),
+('0014', 'Arduino ', 'WiFi Relay Module ESP8266 5V', 375.00, 5, '../product_img/p54.jpeg');
 
 -- --------------------------------------------------------
 
@@ -131,23 +160,19 @@ CREATE TABLE `sells` (
   `payment_method` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
-
-CREATE TABLE `notice` (
-  `notice_id` varchar(20) NOT NULL,
-  `notice_content` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
--- Dumping data for table `notice`
+-- Dumping data for table `sells`
 --
 
--- Indexes for dumped tables
---
-
---
--- Indexes for table `notice`
---
+INSERT INTO `sells` (`sell_id`, `customer_mobile_number`, `price`, `time`, `payment_method`) VALUES
+(1, '01788899814', 94, '2025-01-20 00:10:08', 'card'),
+(2, '01788899814', 256, '2025-01-20 11:42:26', 'card'),
+(3, '01788899814', 256, '2025-01-20 11:46:47', 'bkash'),
+(4, '01788899814', 256, '2025-01-20 11:49:12', 'bkash'),
+(5, '01788899814', 256, '2025-01-20 11:56:03', 'card'),
+(6, '01788899814', 526, '2025-01-20 12:04:00', 'card'),
+(7, '01788899814', 94, '2025-01-20 13:30:21', 'card'),
+(8, '01788899814', 340, '2025-01-20 15:18:22', 'cash');
 
 --
 -- Indexes for dumped tables
@@ -164,6 +189,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `employee`
   ADD PRIMARY KEY (`employee_id`);
+
+--
+-- Indexes for table `notice`
+--
+ALTER TABLE `notice`
+  ADD PRIMARY KEY (`notice_id`);
 
 --
 -- Indexes for table `ordered`
@@ -186,15 +217,12 @@ ALTER TABLE `sells`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `notice`
-  ADD PRIMARY KEY (`notice_id`);
-
 
 --
 -- AUTO_INCREMENT for table `sells`
 --
 ALTER TABLE `sells`
-  MODIFY `sell_id` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `sell_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
