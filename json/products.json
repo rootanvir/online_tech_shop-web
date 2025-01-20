@@ -1,106 +1,114 @@
 [
     {
         "product_id": "0001",
-        "product_category": "book",
-        "product_name": "potter",
-        "product_price": "400.00",
-        "product_quantity": "5",
-        "product_location": "..\/product_img\/p1.png"
+        "product_category": "Arduino ",
+        "product_name": "Arduino Pro Micro",
+        "product_price": "500.00",
+        "product_quantity": "3",
+        "product_location": "..\/product_img\/p38.png"
+    },
+    {
+        "product_id": "00010",
+        "product_category": "Arduino ",
+        "product_name": "Heat Sink Set",
+        "product_price": "50.00",
+        "product_quantity": "4",
+        "product_location": "..\/product_img\/p50.png"
     },
     {
         "product_id": "0002",
-        "product_category": "potter",
-        "product_name": "book",
-        "product_price": "4500.00",
-        "product_quantity": "4",
-        "product_location": "..\/product_img\/p2.png"
+        "product_category": "Arduino ",
+        "product_name": "GPS Module GY-GPSV3 NEO-8M with Ceramic Active Antenna",
+        "product_price": "450.00",
+        "product_quantity": "5",
+        "product_location": "..\/product_img\/p39.png"
     },
     {
         "product_id": "0003",
-        "product_category": "fixed",
-        "product_name": "not fixed",
-        "product_price": "45.00",
-        "product_quantity": "45",
-        "product_location": "..\/product_img\/p16.png"
+        "product_category": "Arduino ",
+        "product_name": "TDS Sensor",
+        "product_price": "300.00",
+        "product_quantity": "4",
+        "product_location": "..\/product_img\/p41.png"
+    },
+    {
+        "product_id": "0004",
+        "product_category": "Arduino ",
+        "product_name": "Bluetooth module",
+        "product_price": "300.00",
+        "product_quantity": "4",
+        "product_location": "..\/product_img\/p42.png"
+    },
+    {
+        "product_id": "0005",
+        "product_category": "Arduino ",
+        "product_name": "DHT11 Temperature and Humidity Sensor",
+        "product_price": "250.00",
+        "product_quantity": "3",
+        "product_location": "..\/product_img\/p43.png"
+    },
+    {
+        "product_id": "0006",
+        "product_category": "Arduino ",
+        "product_name": "GY-906 Infrared Temperature Sensor",
+        "product_price": "1300.00",
+        "product_quantity": "4",
+        "product_location": "..\/product_img\/p45.png"
     },
     {
         "product_id": "0007",
-        "product_category": "soundbox",
-        "product_name": "dumbell",
-        "product_price": "1000.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p20.png"
+        "product_category": "Arduino ",
+        "product_name": "Speed Detecting Sensor",
+        "product_price": "200.00",
+        "product_quantity": "3",
+        "product_location": "..\/product_img\/p46.png"
     },
     {
         "product_id": "0008",
-        "product_category": "soundbox",
-        "product_name": "dumbell",
-        "product_price": "1000.00",
-        "product_quantity": "1",
-        "product_location": "..\/product_img\/p21.png"
+        "product_category": "Arduino ",
+        "product_name": "RF Transmitter Receiver Pair",
+        "product_price": "150.00",
+        "product_quantity": "3",
+        "product_location": "..\/product_img\/p47.png"
     },
     {
-        "product_id": "0010",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p23.png"
+        "product_id": "0009",
+        "product_category": "Arduino ",
+        "product_name": "HC-SR04 Ultrasonic Sensor",
+        "product_price": "100.00",
+        "product_quantity": "4",
+        "product_location": "..\/product_img\/p49.png"
+    },
+    {
+        "product_id": "0011",
+        "product_category": "Arduino ",
+        "product_name": "Raspberry Pi 4 Model B 4GB",
+        "product_price": "12960.00",
+        "product_quantity": "4",
+        "product_location": "..\/product_img\/p51.png"
     },
     {
         "product_id": "0012",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p24.png"
+        "product_category": "Arduino ",
+        "product_name": "Night Vision Camera for Raspberry Pi",
+        "product_price": "2930.00",
+        "product_quantity": "4",
+        "product_location": "..\/product_img\/p52.jpeg"
     },
     {
         "product_id": "0013",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p25.png"
+        "product_category": "Arduino ",
+        "product_name": "Acrylic Case for Raspberry Pi 4 Model B",
+        "product_price": "270.00",
+        "product_quantity": "4",
+        "product_location": "..\/product_img\/p53.jpeg"
     },
     {
         "product_id": "0014",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p26.png"
-    },
-    {
-        "product_id": "0015",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p27.png"
-    },
-    {
-        "product_id": "0016",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p28.png"
-    },
-    {
-        "product_id": "0017",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p29.png"
-    },
-    {
-        "product_id": "0018",
-        "product_category": "soundboxOne",
-        "product_name": "dumbellTwo",
-        "product_price": "3.00",
-        "product_quantity": "3",
-        "product_location": "..\/product_img\/p30.png"
+        "product_category": "Arduino ",
+        "product_name": "WiFi Relay Module ESP8266 5V",
+        "product_price": "375.00",
+        "product_quantity": "5",
+        "product_location": "..\/product_img\/p54.jpeg"
     }
 ]
