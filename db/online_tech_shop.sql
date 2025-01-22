@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2025 at 01:29 PM
+-- Generation Time: Jan 22, 2025 at 04:57 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_mobile_number`, `customer_password`, `customer_name`, `customer_email`, `customer_address`, `customer_dob`) VALUES
-('01712345678', 'pass', 'TANVIR AHMED', 'tanvir@gmail.com', 'Savar, Dhaka, Bangladesh', '2322-01-01');
+('01712345678', 'pass', 'Mr Customer', 'customer@gmail.com', 'Kuril, Dhaka, Bangladesh', '2322-01-01');
 
 -- --------------------------------------------------------
 
@@ -82,13 +82,6 @@ CREATE TABLE `notice` (
   `notice_content` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `notice`
---
-
-INSERT INTO `notice` (`notice_id`, `notice_content`) VALUES
-('1212', 'this is a notice\r\n');
-
 -- --------------------------------------------------------
 
 --
@@ -108,8 +101,8 @@ CREATE TABLE `ordered` (
 --
 
 INSERT INTO `ordered` (`order_id`, `customer_mobile_number`, `total_cost`, `payment_method`, `order_status`) VALUES
-('0002', '01788899814', 256.00, 'bkash', 'pending'),
-('0003', '01788899814', 340.00, 'cash', 'pending');
+('0002', '01712345678', 256.00, 'bkash', 'pending'),
+('0003', '01712345678', 340.00, 'cash', 'Delivered');
 
 -- --------------------------------------------------------
 
@@ -165,14 +158,14 @@ CREATE TABLE `sells` (
 --
 
 INSERT INTO `sells` (`sell_id`, `customer_mobile_number`, `price`, `time`, `payment_method`) VALUES
-(1, '01788899814', 94, '2025-01-20 00:10:08', 'card'),
-(2, '01788899814', 256, '2025-01-20 11:42:26', 'card'),
-(3, '01788899814', 256, '2025-01-20 11:46:47', 'bkash'),
-(4, '01788899814', 256, '2025-01-20 11:49:12', 'bkash'),
-(5, '01788899814', 256, '2025-01-20 11:56:03', 'card'),
-(6, '01788899814', 526, '2025-01-20 12:04:00', 'card'),
-(7, '01788899814', 94, '2025-01-20 13:30:21', 'card'),
-(8, '01788899814', 340, '2025-01-20 15:18:22', 'cash');
+(1, '01712345678', 94, '2025-01-20 00:10:08', 'card'),
+(2, '01712345678', 256, '2025-01-20 11:42:26', 'card'),
+(3, '01712345678', 256, '2025-01-20 11:46:47', 'bkash'),
+(4, '01712345678', 256, '2025-01-20 11:49:12', 'bkash'),
+(5, '01712345678', 256, '2025-01-20 11:56:03', 'card'),
+(6, '01712345678', 526, '2025-01-20 12:04:00', 'card'),
+(7, '01712345678', 94, '2025-01-20 13:30:21', 'card'),
+(8, '01712345678', 340, '2025-01-20 15:18:22', 'cash');
 
 --
 -- Indexes for dumped tables
