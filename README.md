@@ -75,13 +75,13 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 
 ## Screenshots
 - **Product Catalog**
-![image](https://github.com/user-attachments/assets/f7dc2ff5-c17b-469d-8452-49be3c8452bc)
+![image](https://github.com/rootanvir/asset/blob/b82b173643c78cd0669784812579382b2a8f252d/product%20catalog.png)
 
 - **Admin Dashboard**
-- ![image](https://github.com/user-attachments/assets/6046b87f-6ab9-45b1-a6bc-62c3e22258c4)
+- ![image](https://github.com/rootanvir/asset/blob/b82b173643c78cd0669784812579382b2a8f252d/admin.png)
 
 - **Manager Dashboard**
-![image](https://github.com/user-attachments/assets/a14798d2-942c-4b58-a739-757a7b9be082)
+![image](https://github.com/rootanvir/asset/blob/ecc2d646fbe1fdb26a3dab9ed9aa25dcc6da3992/manger.png)
 
 
 
