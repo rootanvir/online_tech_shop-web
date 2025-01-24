@@ -80,7 +80,7 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 ![image](https://github.com/user-attachments/assets/db53ce0c-0bc8-4d9c-9c99-202521326ec9)
 ![image](https://github.com/user-attachments/assets/59d6de88-55a2-4b10-a466-19d0600c33bb)
 ![image](https://github.com/user-attachments/assets/b00de3a9-3a25-4cc3-8d7d-bb4696e78f68)
-![image](https://github.com/user-attachments/assets/4838863f-b889-4988-93d4-f6596b0c6256)
+![Image](https://github.com/user-attachments/assets/e1306c58-4a76-443a-a7ee-2cd403c7cdb6)
 
 
 - **Admin Dashboard**
@@ -88,7 +88,7 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 - ![image](https://github.com/user-attachments/assets/0487986b-172f-4da9-aad1-517d33101f3d)
 - ![image](https://github.com/user-attachments/assets/0a8ea02a-30d9-4440-b65e-e5dac4b5df54)
 - ![image](https://github.com/user-attachments/assets/02eb3a76-11c3-4ffb-b907-f21ce8737497)
-- ![image](https://github.com/user-attachments/assets/54158783-0889-43f9-8351-95ac7f71e4da)
+- ![Image](https://github.com/user-attachments/assets/cf014531-4288-4793-8595-0807fcfccfb3)
 - ![image](https://github.com/user-attachments/assets/74eb7165-2477-4e75-b3af-2a2559324430)
 - ![image](https://github.com/user-attachments/assets/aa2904f4-dc6c-49e4-8daa-384a16c3b875)
 - ![image](https://github.com/user-attachments/assets/79f9ea1f-63ac-4586-ba04-0fdde351e397)
