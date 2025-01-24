@@ -90,7 +90,7 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 - ![image](https://github.com/user-attachments/assets/02eb3a76-11c3-4ffb-b907-f21ce8737497)
 - ![Image](https://github.com/user-attachments/assets/cf014531-4288-4793-8595-0807fcfccfb3)
 - ![image](https://github.com/user-attachments/assets/74eb7165-2477-4e75-b3af-2a2559324430)
-- ![image](https://github.com/user-attachments/assets/aa2904f4-dc6c-49e4-8daa-384a16c3b875)
+- ![Image](https://github.com/user-attachments/assets/72a6a107-4e0d-4459-8323-801ddc160810)
 - ![image](https://github.com/user-attachments/assets/79f9ea1f-63ac-4586-ba04-0fdde351e397)
 - ![image](https://github.com/user-attachments/assets/91be195c-16e2-4f15-a1c0-c24a9a076749)
 
