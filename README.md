@@ -75,7 +75,7 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 
 ## Screenshots
 - **Customer Perspective**
-![image](https://github.com/rootanvir/asset/blob/b82b173643c78cd0669784812579382b2a8f252d/product%20catalog.png)
+![Image](https://github.com/user-attachments/assets/55b522ac-b969-4487-9448-c7c2d6c3ba0d)
 ![image](https://github.com/user-attachments/assets/c1c13ce7-d9b5-4885-b654-a7fe86177435)
 ![image](https://github.com/user-attachments/assets/db53ce0c-0bc8-4d9c-9c99-202521326ec9)
 ![image](https://github.com/user-attachments/assets/59d6de88-55a2-4b10-a466-19d0600c33bb)
@@ -84,7 +84,7 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 
 
 - **Admin Dashboard**
-- ![image](https://github.com/rootanvir/asset/blob/b82b173643c78cd0669784812579382b2a8f252d/admin.png)
+- ![Image](https://github.com/user-attachments/assets/a57f16cd-888d-414b-9141-af259a92650c)
 - ![image](https://github.com/user-attachments/assets/0487986b-172f-4da9-aad1-517d33101f3d)
 - ![image](https://github.com/user-attachments/assets/0a8ea02a-30d9-4440-b65e-e5dac4b5df54)
 - ![image](https://github.com/user-attachments/assets/02eb3a76-11c3-4ffb-b907-f21ce8737497)
@@ -95,7 +95,7 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 - ![image](https://github.com/user-attachments/assets/91be195c-16e2-4f15-a1c0-c24a9a076749)
 
 - **Manager Dashboard**
-![image](https://github.com/rootanvir/asset/blob/ecc2d646fbe1fdb26a3dab9ed9aa25dcc6da3992/manger.png)
+![Image](https://github.com/user-attachments/assets/8bc18f2d-7a3a-49da-8d7f-405e655cca13)
 ![image](https://github.com/user-attachments/assets/796a1ccb-d58e-402d-803a-dc00de0b5223)
 ![image](https://github.com/user-attachments/assets/e9143f9a-b0d6-46fd-bfc7-ec6ae3d12307)
 
