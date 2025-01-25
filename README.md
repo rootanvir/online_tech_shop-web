@@ -82,7 +82,7 @@ For any queries or support, please reach out:
 **Authors:**
 1. **Tanvir Ahmed Tuhin** - [rootanvir](https://github.com/rootanvir)
 2. **Abdullah Shishir** - [shishir786](https://github.com/shishir786)
-3. **Saniul Islam** - [rootanvir](https://github.com/saniulsani)
+3. **Saniul Islam** - [saniulsani](https://github.com/saniulsani)
 
 
 ## Contributing
