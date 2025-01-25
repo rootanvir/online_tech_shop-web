@@ -73,6 +73,40 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 
 
 
+
+
+## Contact
+
+For any queries or support, please reach out:
+
+**Authors:**
+1. **Tanvir Ahmed Tuhin** - [rootanvir](https://github.com/rootanvir)
+2. **Abdullah Shishir** - [shishir786](https://github.com/shishir786)
+3. **Saniul Islam** - [rootanvir](https://github.com/rootanvir)
+
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Make your changes and commit.
+4. Push changes (`git push origin feature-name`).
+5. Open a pull request for review.
+
+
+
+## Acknowledgments
+Thanks to the open-source community for the tools and libraries used in this project.
+
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Support
+For any issues or questions, please open an issue in the repository or contact the project owner.
+
+
 ## Screenshots
 - **Customer Perspective**
 ![Image](https://github.com/user-attachments/assets/55b522ac-b969-4487-9448-c7c2d6c3ba0d)
@@ -100,30 +134,6 @@ The Online Tech Shop Web is an e-commerce platform built to provide users with a
 ![image](https://github.com/user-attachments/assets/e9143f9a-b0d6-46fd-bfc7-ec6ae3d12307)
 
 
-
-
-
-## Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Make your changes and commit.
-4. Push changes (`git push origin feature-name`).
-5. Open a pull request for review.
-
-
-
-
-## Acknowledgments
-Thanks to the open-source community for the tools and libraries used in this project.
-
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Support
-For any issues or questions, please open an issue in the repository or contact the project owner.
 
 
 
